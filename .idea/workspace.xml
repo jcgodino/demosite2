@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
-    <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="case">
+    <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="Case sensitivity">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/searchsavedsearches.html" afterPath="$PROJECT_DIR$/html/searchsavedsearches.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewpoint.js" afterPath="$PROJECT_DIR$/js/viewpoint.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385041599435" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385042314438" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385042167899" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385042204955" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,19 +72,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="viewpoint.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="viewpoint.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="352" column="52" selection-start="9384" selection-end="9398" vertical-scroll-proportion="0.0">
+            <state line="374" column="24" selection-start="9881" selection-end="9881" vertical-scroll-proportion="0.88847584">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchsavedsearches.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="searchsavedsearches.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="40" selection-start="2050" selection-end="2066" vertical-scroll-proportion="0.65900385">
+            <state line="78" column="47" selection-start="3301" selection-end="3301" vertical-scroll-proportion="-11.375">
               <folding />
             </state>
           </provider>
@@ -93,7 +93,7 @@
       <file leaf-file-name="savesearchdemo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +102,7 @@
       <file leaf-file-name="searchdemo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="28" selection-start="3118" selection-end="3118" vertical-scroll-proportion="0.0">
+            <state line="60" column="0" selection-start="2609" selection-end="3118" vertical-scroll-proportion="-10.0">
               <folding />
             </state>
           </provider>
@@ -136,8 +136,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/viewpoint.js" />
         <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
+        <option value="$PROJECT_DIR$/js/viewpoint.js" />
       </list>
     </option>
   </component>
@@ -401,7 +401,11 @@
       <created>1385041603543</created>
       <updated>1385041603543</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Case sensitivity">
+      <created>1385042318782</created>
+      <updated>1385042318782</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -477,7 +481,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Case sensitivity" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -494,6 +498,7 @@
     <MESSAGE value="New changelist" />
     <MESSAGE value="search saved searches don" />
     <MESSAGE value="case" />
+    <MESSAGE value="Case sensitivity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -538,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/navi.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -552,23 +550,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
+    <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="28" selection-start="3118" selection-end="3118" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
+    <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="352" column="52" selection-start="9384" selection-end="9398" vertical-scroll-proportion="0.0">
+        <state line="60" column="0" selection-start="2609" selection-end="3118" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="40" selection-start="2050" selection-end="2066" vertical-scroll-proportion="0.65900385">
+        <state line="78" column="47" selection-start="3301" selection-end="3301" vertical-scroll-proportion="-11.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="374" column="24" selection-start="9881" selection-end="9881" vertical-scroll-proportion="0.88847584">
           <folding />
         </state>
       </provider>

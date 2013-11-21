@@ -16,7 +16,7 @@ var createThePagination = true;
 var order = "&order=name_string:desc";
 var SavedSearchRange = "?page=1&size=10";
 var SavedSearchOrder = "&order=name:desc";
-var SearchSavedSearchCase = "case=sensitive"   // sensitive        insensitive
+var SearchSavedSearchCase = "&case=sensitive"   // sensitive        insensitive
 
 function getAsset(assetID) {
 	$.ajax({
@@ -315,7 +315,7 @@ function deleteSavedSearch() {
 function searchForSavedSearches() {
 	query = $("#SavedSearchQuery").val();
 
-	url1 = viewpointSaveSearchURL + "/search/" + query + "?" + SearchSavedSearchCase;
+	url1 = viewpointSaveSearchURL + "/search/" + query + range + SavedSearchOrder + SearchSavedSearchCase;
 	$.ajax({
 		type: "GET",
 		url: url1,// + SavedSearchRange + SavedSearchOrder,
@@ -349,12 +349,27 @@ function searchForSavedSearches() {
 function setupSearchDropdowns() {
 
 	$('#A8').click(function (e) {
-		SearchSavedSearchCase = "case=sensitive";
+		SearchSavedSearchCase = "&case=sensitive";
 		$("#sensitivitychoice").html("case=sensitive");
 	});
 
 	$('#A9').click(function (e) {
-		SearchSavedSearchCase = "case=insensitive";
+		SearchSavedSearchCase = "&case=insensitive";
 		$("#sensitivitychoice").html("case=insensitive");
+	});
+	$('#A12').click(function (e) {
+		range = "?from=1&to=10"
+		pageSize = 10
+	});
+	$('#A13').click(function (e) {
+		range = "?from=1&to=20"
+		pageSize = 20
+	});
+	$('#A10').click(function (e) {
+		SavedSearchOrder = "&order=name:desc";
+	});
+
+	$('#A11').click(function (e) {
+		SavedSearchOrder = "&order=name:asc";
 	});
 }
