@@ -1,0 +1,65 @@
+﻿body {
+    font-family: 'Arial Unicode MS';
+    background-color: aqua;
+}
+
+h2 {
+    background-color: aliceblue;
+    color: black;
+    text-align: right;
+    font-family: 'Arial Unicode MS';
+}
+
+p {
+    font-family: 'Comic Sans MS';
+}
+
+.row1 {
+    background-color: aqua;
+    width:87%;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color:darkgoldenrod;
+}
+
+a:hover {
+    color:darkviolet;
+}
+
+a:active {
+    color:yellow;
+}
+
+/* CSS styling for CSSExample.html web page
+    */
+body.cssExample {
+    background-image: url(arsenal-crest.png);
+    background-repeat: repeat-y;
+}
+
+p.goback {
+    background-color: white;
+    border: thick;
+}
+
+div.leftmargin {
+    margin-left: 150px
+}
+
+ul.css {
+    list-style-type:square;
+}
+
+ol.css {
+    list-style-type:upper-roman;
+}
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
