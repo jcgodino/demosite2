@@ -350,9 +350,11 @@ function setupSearchDropdowns() {
 
 	$('#A8').click(function (e) {
 		SearchSavedSearchCase = "case=sensitive";
+		$("#sensitivitychoice").html("case=sensitive");
 	});
 
 	$('#A9').click(function (e) {
 		SearchSavedSearchCase = "case=insensitive";
+		$("#sensitivitychoice").html("case=insensitive");
 	});
 }
