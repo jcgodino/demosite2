@@ -16,8 +16,6 @@ var createThePagination = true;
 var order = "&order=name_string:desc";
 var SavedSearchRange = "?page=1&size=10";
 var SavedSearchOrder = "&order=name:desc";
-var temp = carlos
-
 
 function getAsset(assetID) {
 	$.ajax({
