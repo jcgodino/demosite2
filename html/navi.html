@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Demo Page</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/viewpoint.js"></script>
+</head>
+<body>
+<div style="margin-top:20px">
+    <ul class="nav nav-tabs">
+        <li class="active"><a id="search" href="#searchdemo" data-toggle="tab">Seach</a></li>
+        <li><a href="#savesearchdemo" data-toggle="tab">Save Search</a></li>
+        <li><a href="#seachsavesearchdemo" data-toggle="tab">Search Saved Search</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="searchdemo">
+            <div id="searchdemo1">
+                <script>
+                    $("#searchdemo1").load("searchdemo.html", setupNoOfAssetsToShow());
+                </script>
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="savesearchdemo">
+            <div id="savesearchdemo1">
+                <p style="font-size: 22px">save search demo</p>
+                <script>
+                    $("#savesearchdemo1").load("savesearchdemo.html");
+                </script>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="seachsavesearchdemo">
+            <div id="seachsavesearchdemo1">
+                <p style="font-size: 22px">search saved search demo</p>
+                <script>
+                    $("#seachsavesearchdemo1").load("searchsavedsearches.html");
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

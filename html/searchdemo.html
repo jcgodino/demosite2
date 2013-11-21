@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>Demo Page</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        setupNoOfAssetsToShow();
+    </script>
+</head>
+<body>
+<div class="panel-body">
+
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-heading">
+            <h1 class="panel-title"><b>Viewpoint Search Demo</b></h1>
+        </div>
+        <div class="panel-body">
+            Portal Team - Sprint 1 demo
+        </div>
+    </div>
+</div>
+<!-- <div class="panel panel-default">
+<div class="panel-heading">Test</div>
+    <form>
+        <button type="button" class="btn btn-default btn-lg" onclick="myFunction()"><span class="glyphicon glyphicon-search"></span> Click Me</button>
+        <p id="theResponse">Here's the response: </p>
+    </form>
+</div>-->
+<div class="panel-body">
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-heading">Asset Searching</div>
+        <div class="panel-body">
+            <form>
+                <pre id="asset" class="container"></pre>
+                <div class="dropdown">
+                    <!-- Single button -->
+                    <div class="btn-group" style="visibility: hidden; width:0px">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Language <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="langSelection">
+                            <li><a href="#" id="engSelected">English</a></li>
+                            <li><a href="#" id="turSelected">Turkish</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Order <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="Ul2">
+                            <li><a href="#" id="A6">Desc</a></li>
+                            <li><a href="#" id="A7">Asc</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Show ... <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" id="Ul1">
+                            <li><a href="#" id="A1">Show 10 assets</a></li>
+                            <li><a href="#" id="A2">Show 20 assets</a></li>
+                            <li><a href="#" id="A3">Show 30 assets</a></li>
+                            <li><a href="#" id="A4">Show 40 assets</a></li>
+                            <li><a href="#" id="A5">Show 50 assets</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+
+                <div>
+                    <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="myFunctionSearch()">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        <input id="q3" type="text" class="form-control" onkeyup="onKeyUpCalled(event)"
+                               onkeydown="if (event.keyCode == 13 ){return false;}"/>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">
+                                    <span class="glyphicon glyphicon-floppy-save"></span>
+                                </button>
+                            </span>
+                    </div>
+                    <!-- /input-group -->
+                    <br/>
+
+                    <p id="P1">Here's the response: </p>
+                    <ul id="PaginationNavi" class="pagination">
+                    </ul>
+                    <div class="list-group" id="assetsList">
+                        <p id="assets" class="container"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Save Search</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">name</span>
+                        <input id="saveSearchName" type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSearch()">Save</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div class="panel panel-default" style="width: 90%; visibility: hidden">
+        <div class="panel-heading">Query 2</div>
+        <div class="panel-body">
+            Enter Your Search Query
+            <form>
+                <input id="q2" type="text" class="form-control" style="width: 70%"/>
+
+                <div>
+                    <button type="button" class="btn btn-default btn-lg" onclick="myFunctionSearchUsegetJSON()"><span
+                            class="glyphicon glyphicon-search"></span>Search using getJSON
+                    </button>
+                    <p id="P3">Here's the response: </p>
+
+                    <p id="P4" class="container"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-primary" style="width: 90%; visibility: hidden">
+        <div class="panel-heading"><b>Query Info</b></div>
+        <div class="panel-body">
+            <span>Query</span>
+            Panel content
+            <table style="width: 100%;">
+                <tr>
+                    <td>&nbsp;row 1 col 1</td>
+                    <td>&nbsp;row 1 col 2</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;row 2 col 1</td>
+                    <td>&nbsp;row 2 col 2</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;row 3 col 1</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+
+
+</html>
+
