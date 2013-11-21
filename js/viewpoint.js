@@ -16,6 +16,7 @@ var createThePagination = true;
 var order = "&order=name_string:desc";
 var SavedSearchRange = "?page=1&size=10";
 var SavedSearchOrder = "&order=name:desc";
+var SearchSavedSearchCase = "case=sensitive"   // sensitive        insensitive
 
 function getAsset(assetID) {
 	$.ajax({
@@ -314,7 +315,7 @@ function deleteSavedSearch() {
 function searchForSavedSearches() {
 	query = $("#SavedSearchQuery").val();
 
-	url1 = viewpointSaveSearchURL + "/search/" + query;
+	url1 = viewpointSaveSearchURL + "/search/" + query + "?" + SearchSavedSearchCase;
 	$.ajax({
 		type: "GET",
 		url: url1,// + SavedSearchRange + SavedSearchOrder,
@@ -343,4 +344,15 @@ function searchForSavedSearches() {
 			//if(createThePagination)
 			//createPagination(searchResults.data.metadata.totalRecords);
 		})
+}
+
+function setupSearchDropdowns() {
+
+	$('#A8').click(function (e) {
+		SearchSavedSearchCase = "case=sensitive";
+	});
+
+	$('#A9').click(function (e) {
+		SearchSavedSearchCase = "case=insensitive";
+	});
 }

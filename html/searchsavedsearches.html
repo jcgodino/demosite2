@@ -2,6 +2,21 @@
 <html>
 <head>
     <title>Search Saved Searches</title>
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        setupSearchDropdowns();
+    </script>
 </head>
 <body>
 <div class="panel-body">
@@ -30,6 +45,15 @@
     <div class="panel panel-default" style="width: 90%;">
         <div class="panel-heading">Search</div>
         <div class="panel-body">
+            <br>
+
+            <div>
+                <ul class="dropdown-menu" role="menu" id="sensitivity">
+                    <li><a href="#" id="A8">Case sensitive</a></li>
+                    <li><a href="#" id="A9">Case insensitive</a></li>
+                </ul>
+            </div>
+
             <div class="input-group">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" onclick="searchForSavedSearches()">
@@ -37,9 +61,10 @@
                                 </button>
 
                             </span>
-            <input id="SavedSearchQuery" type="text" class="form-control" onkeyup="onKeyUpCalled(event)"/>
+                <input id="SavedSearchQuery" type="text" class="form-control" onkeyup="onKeyUpCalled(event)"/>
             </div>
             <br>
+
             <div class="list-group" id="SearchedsavedSearchList">
                 <p id="searched" class="container"></p>
             </div>
