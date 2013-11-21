@@ -310,3 +310,35 @@ function deleteSavedSearch() {
 			//alert(msg.responseText)
 		});
 }
+
+function searchForSavedSearches() {
+	query = $("#SavedSearchQuery").val();
+
+	url1 = viewpointSaveSearchURL + "/search/" + query;
+	$.ajax({
+		type: "GET",
+		url: url1,// + SavedSearchRange + SavedSearchOrder,
+		crossDomain: true,
+		dataType: "text",
+		beforeSend: function () {
+			$('#savedSearchList').empty();
+		}
+	})
+		.done(function (data) {
+			//$('#P1').removeClass("alert-danger");
+			//$('#P1').text("Here's the response: ").addClass("alert-success");
+
+			var searchResults = JSON.parse(data);
+
+			if (searchResults.data.metadata.totalRecords)
+				$.each(searchResults.data.savedSearches, function (index, savedSearch) {
+					$('#savedSearchList').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
+				});
+
+			//$(".list-group-item").click(function (event) {
+			//	getAsset(event.target.id);
+			//});
+			//if(createThePagination)
+			//createPagination(searchResults.data.metadata.totalRecords);
+		})
+}

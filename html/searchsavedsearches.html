@@ -27,6 +27,24 @@
             <!-- <ul class="list-group" id="savedSearchList"></ul> -->
         </div>
     </div>
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-heading">Search</div>
+        <div class="panel-body">
+            <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="searchForSavedSearches()">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                                <input id="SavedSearchQuery" type="text" class="form-control" onkeyup="onKeyUpCalled(event)"/>
+                            </span>
+
+
+                <div class="list-group" id="SearchedsavedSearchList">
+                    <p id="searched" class="container"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
