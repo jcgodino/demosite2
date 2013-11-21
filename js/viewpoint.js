@@ -18,6 +18,7 @@ var SavedSearchRange = "?page=1&size=10";
 var SavedSearchOrder = "&order=name:desc";
 var temp = carlos
 
+
 function getAsset(assetID) {
 	$.ajax({
 		type: "GET",
