@@ -321,7 +321,7 @@ function searchForSavedSearches() {
 		crossDomain: true,
 		dataType: "text",
 		beforeSend: function () {
-			$('#savedSearchList').empty();
+			$('#searched').empty();
 		}
 	})
 		.done(function (data) {
@@ -330,11 +330,13 @@ function searchForSavedSearches() {
 
 			var searchResults = JSON.parse(data);
 
-			if (searchResults.data.metadata.totalRecords)
+			if (searchResults.data.metadata.totalRecords) {
 				$.each(searchResults.data.savedSearches, function (index, savedSearch) {
-					$('#savedSearchList').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
+					$('#searched').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
 				});
-
+			} else {
+				$('#searched').html("no matches found");
+			}
 			//$(".list-group-item").click(function (event) {
 			//	getAsset(event.target.id);
 			//});

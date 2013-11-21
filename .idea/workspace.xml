@@ -9,9 +9,9 @@
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385033476093" ignored="false" />
-    <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385035708206" ignored="false" />
-    <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385036899927" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385037399168" ignored="false" />
+    <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385038246144" ignored="false" />
+    <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385038084522" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +72,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="viewpoint.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="viewpoint.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="316" column="45" selection-start="8229" selection-end="8229" vertical-scroll-proportion="0.7413572">
+            <state line="337" column="73" selection-start="8931" selection-end="8931" vertical-scroll-proportion="-23.115385">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -83,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchsavedsearches.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="searchsavedsearches.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="53" selection-start="620" selection-end="620" vertical-scroll-proportion="-6.0">
+            <state line="41" column="16" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.7331572">
               <folding />
             </state>
           </provider>
@@ -129,8 +129,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
         <option value="$PROJECT_DIR$/js/viewpoint.js" />
+        <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
       </list>
     </option>
   </component>
@@ -374,7 +374,11 @@
       <created>1385033483608</created>
       <updated>1385033483608</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New changelist">
+      <created>1385037405107</created>
+      <updated>1385037405107</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -488,19 +492,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="53" selection-start="620" selection-end="620" vertical-scroll-proportion="-6.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="316" column="45" selection-start="8229" selection-end="8229" vertical-scroll-proportion="0.7413572">
+        <state line="337" column="73" selection-start="8931" selection-end="8931" vertical-scroll-proportion="-23.115385">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="16" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.7331572">
+          <folding />
         </state>
       </provider>
     </entry>
