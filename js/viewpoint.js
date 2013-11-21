@@ -335,7 +335,9 @@ function searchForSavedSearches() {
 				$.each(searchResults.data.savedSearches, function (index, savedSearch) {
 					$('#searched').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
 				});
+				createSavedSearchesPagination(searchResults.data.metadata.totalRecords);
 			} else {
+				$('#SavedSearchesPaginationNavi').empty();
 				$('#searched').html("no matches found");
 			}
 			//$(".list-group-item").click(function (event) {
@@ -372,4 +374,23 @@ function setupSearchDropdowns() {
 	$('#A11').click(function (e) {
 		SavedSearchOrder = "&order=name:asc";
 	});
+}
+
+function createSavedSearchesPagination(totalRecords) {
+	pages = totalRecords / 10;
+	pages = Math.round(pages);
+
+	$('#SavedSearchesPaginationNavi').empty();
+	for (var i = 1; (i <= 10) && (i <= pages); i++) {
+
+		$('#SavedSearchesPaginationNavi').append('<li><a href="#" id="' + i + '">' + i + '</a></li>');
+
+		$('#' + i).click(function () {
+			range = "?page=" + this.id + "&size=" + pageSize;
+			myFunctionSearch();
+		})
+	}
+
+	createThePagination = false;
+	//$('#PaginationNavi').append('<li><a href="#">&raquo;</a></li>');
 }
