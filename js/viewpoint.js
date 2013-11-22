@@ -1,7 +1,7 @@
 ﻿//var baseURL = "http://152.144.161.210:8080";
 //var baseURL = "http://uksearchdev:8080";
 //var baseURL = "http://g1cg1d:8080";
-var baseURL = "http://localhost:8080";
+//var baseURL = "http://localhost:8080";
 var viewpointAssetBasePath = "/viewpoint-services/v1/assets";
 var viewpointSSBasePath = "/viewpoint-services/v1/savedsearches";
 var viewpointSearchURL = baseURL + viewpointAssetBasePath;
