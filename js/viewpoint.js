@@ -56,15 +56,15 @@ function myFunctionSearch() {
 		//+ solrParams,
 		crossDomain: true,
 		dataType: "text",
+		//dataType: "jsonp",
 		//jsonp : "json.wrf",
-		//headers : {"Access-Control-Allow-Origin": "*"},
+		//headers: {"Access-Control-Allow-Origin": "*"},
 		//async: true,
 		beforeSend: function () {
 			$('#assetsList').empty();
 			$('#asset').hide();
 		}
-	})
-		.done(function (data) {
+	}).done(function (data) {
 			$('#P1').removeClass("alert-danger");
 			$('#P1').text("Here's the response: ").addClass("alert-success");
 
@@ -168,7 +168,7 @@ function setupNoOfAssetsToShow() {
 }
 
 function GetSavedSearchs() {
-	url1 = viewpointSaveSearchURL;
+	url1 = viewpointSaveSearchURL + "?page=1&size=1000";
 	$.ajax({
 		type: "GET",
 		url: url1,// + SavedSearchRange + SavedSearchOrder,
