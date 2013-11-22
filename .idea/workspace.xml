@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
     <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="search saved searches order">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/searchsavedsearches.html" afterPath="$PROJECT_DIR$/html/searchsavedsearches.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewpoint.js" afterPath="$PROJECT_DIR$/js/viewpoint.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385138634105" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385139312309" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385138981833" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
     <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385118129723" ignored="false" />
@@ -78,8 +77,10 @@
       <file leaf-file-name="viewpoint.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="2" selection-start="130" selection-end="130" vertical-scroll-proportion="0.051605504">
-              <folding />
+            <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.051605504">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -435,7 +436,11 @@
       <created>1385138639067</created>
       <updated>1385138639067</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="search saved searches order">
+      <created>1385139318928</created>
+      <updated>1385139318928</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -542,7 +547,9 @@
     <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="70" selection-start="1883" selection-end="1883" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -579,7 +586,9 @@
     <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -645,8 +654,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="130" selection-end="130" vertical-scroll-proportion="0.051605504">
-          <folding />
+        <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.051605504">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
