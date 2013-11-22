@@ -76,7 +76,7 @@ function myFunctionSearch() {
 			$(".list-group-item").click(function (event) {
 				getAsset(event.target.id);
 			});
-			//if(createThePagination)
+
 			createPagination(searchResults.data.metadata.totalRecords);
 		})
 		.error(function (data) {
@@ -165,36 +165,6 @@ function setupNoOfAssetsToShow() {
 	$('#A7').click(function (e) {
 		order = "&order=name_string:asc";
 	});
-}
-
-function GetSavedSearchs() {
-	url1 = viewpointSaveSearchURL + "?page=1&size=1000";
-	$.ajax({
-		type: "GET",
-		url: url1,// + SavedSearchRange + SavedSearchOrder,
-		crossDomain: true,
-		dataType: "text",
-		beforeSend: function () {
-			$('#savedSearchList').empty();
-		}
-	})
-		.done(function (data) {
-			//$('#P1').removeClass("alert-danger");
-			//$('#P1').text("Here's the response: ").addClass("alert-success");
-
-			var searchResults = JSON.parse(data);
-
-			if (searchResults.data.metadata.totalRecords)
-				$.each(searchResults.data.savedSearches, function (index, savedSearch) {
-					$('#savedSearchList').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
-				});
-
-			//$(".list-group-item").click(function (event) {
-			//	getAsset(event.target.id);
-			//});
-			//if(createThePagination)
-			//createPagination(searchResults.data.metadata.totalRecords);
-		})
 }
 
 function GetURL() {
@@ -312,6 +282,59 @@ function deleteSavedSearch() {
 			$("#P6").html(msg.responseText).addClass("alert alert-danger").show();
 			//alert(msg.responseText)
 		});
+}
+
+function GetSavedSearchs() {
+	url1 = viewpointSaveSearchURL + "?page=1&size=1000";
+	$.ajax({
+		type: "GET",
+		url: url1,// + SavedSearchRange + SavedSearchOrder,
+		crossDomain: true,
+		dataType: "text",
+		beforeSend: function () {
+			$('#savedSearchList').empty();
+		}
+	})
+		.done(function (data) {
+			//$('#P1').removeClass("alert-danger");
+			//$('#P1').text("Here's the response: ").addClass("alert-success");
+
+			var searchResults = JSON.parse(data);
+
+			if (searchResults.data.metadata.totalRecords)
+				$.each(searchResults.data.savedSearches, function (index, savedSearch) {
+					$('#savedSearchList').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
+				});
+
+			$(".list-group-item").click(function (event) {
+				getSavedSearchDetails(event.target.id);
+			});
+			//if(createThePagination)
+			//createPagination(searchResults.data.metadata.totalRecords);
+		})
+}
+
+function getSavedSearchDetails(assetID) {
+	$.ajax({
+		type: "GET",
+		url: viewpointSaveSearchURL + "/" + assetID,
+		//context: document.body,
+		crossDomain: true,
+		dataType: "text"
+		//async: false,
+		//jsonp: 'json.wrf'
+	})
+		.done(function (data) {
+			//$('#asset').html(JSON.stringify(data, undefined, 2));
+			$('#savedsearchdetails').removeClass("alert-danger");
+			$('#savedsearchdetails').html(data).addClass("alert alert-success").show();
+			//$('#asset').addClass("jumbotron").show();
+		})
+		.error(function (msg) {
+			$('#savedsearchdetails').removeClass("alert-success");
+			$('#savedsearchdetails').html(msg.responseText).addClass("alert alert-danger").show();
+			//alert(msg.responseText)
+		})
 }
 
 function searchForSavedSearches() {

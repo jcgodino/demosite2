@@ -3,16 +3,15 @@
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
     <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="search saved searches order">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/navi.html" afterPath="$PROJECT_DIR$/html/navi.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/searchsavedsearches.html" afterPath="$PROJECT_DIR$/html/searchsavedsearches.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/viewpoint.js" afterPath="$PROJECT_DIR$/js/viewpoint.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385118160452" ignored="false" />
-    <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385134161544" ignored="false" />
-    <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385120208288" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385135185322" ignored="false" />
+    <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137464013" ignored="false" />
+    <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
     <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385118129723" ignored="false" />
     <file path="/navi.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385134383720" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/viewpoint/trunk/modules/services-accepttests/src/test/java/com/pb/viewpoint/service/savedsearch/SavedSearchAcceptanceTestBase.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385134569918" ignored="false" />
@@ -79,7 +78,7 @@
       <file leaf-file-name="viewpoint.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="54" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.28440368">
+            <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.051605504">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -90,7 +89,7 @@
       <file leaf-file-name="searchsavedsearches.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="54" selection-start="1376" selection-end="1376" vertical-scroll-proportion="-14.375">
+            <state line="35" column="39" selection-start="1343" selection-end="1361" vertical-scroll-proportion="-16.25">
               <folding />
             </state>
           </provider>
@@ -108,7 +107,7 @@
       <file leaf-file-name="searchdemo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="0" selection-start="5016" selection-end="5105" vertical-scroll-proportion="0.0">
+            <state line="48" column="56" selection-start="1900" selection-end="1940" vertical-scroll-proportion="-8.125">
               <folding />
             </state>
           </provider>
@@ -142,15 +141,15 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
         <option value="$PROJECT_DIR$/html/navi.html" />
+        <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
         <option value="$PROJECT_DIR$/js/viewpoint.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="243" />
-    <option name="y" value="28" />
+    <option name="x" value="286" />
+    <option name="y" value="30" />
     <option name="width" value="1815" />
     <option name="height" value="1244" />
   </component>
@@ -428,14 +427,18 @@
       <created>1385106806699</created>
       <updated>1385106806699</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="search saved searches order">
+      <created>1385135190786</created>
+      <updated>1385135190786</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="243" y="28" width="1815" height="1244" extended-state="0" />
-    <editor active="false" />
+    <frame x="286" y="30" width="1815" height="1244" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17615658" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17615658" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -613,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="0" selection-start="5016" selection-end="5105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/navi.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="82" selection-start="1192" selection-end="1192" vertical-scroll-proportion="-6.98">
@@ -627,16 +623,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="56" selection-start="1900" selection-end="1940" vertical-scroll-proportion="-8.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="54" selection-start="1376" selection-end="1376" vertical-scroll-proportion="-14.375">
+        <state line="35" column="39" selection-start="1343" selection-end="1361" vertical-scroll-proportion="-16.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="54" selection-start="4588" selection-end="4588" vertical-scroll-proportion="0.28440368">
+        <state line="3" column="0" selection-start="128" selection-end="128" vertical-scroll-proportion="0.051605504">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
