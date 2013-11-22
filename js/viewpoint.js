@@ -361,14 +361,15 @@ function searchForSavedSearches() {
 					$('#searched').append('<li><a href="#" id="' + savedSearch.id + '" class="list-group-item">' + savedSearch.name + '</a></li>');
 				});
 				createSavedSearchesPagination(searchResults.data.metadata.totalRecords);
+				$(".list-group-item").click(function (event) {
+					getSavedSearchDetails(event.target.id);
+				});
 			} else {
 				$('#SavedSearchesPaginationNavi').empty();
 				$('#searched').html("no matches found");
 			}
-			//$(".list-group-item").click(function (event) {
-			//	getAsset(event.target.id);
-			//});
-			//if(createThePagination)
+
+
 			//createPagination(searchResults.data.metadata.totalRecords);
 		})
 }
