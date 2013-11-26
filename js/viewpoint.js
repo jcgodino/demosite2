@@ -1,7 +1,7 @@
 ﻿//var baseURL = "http://152.144.161.210:8080";
-//var baseURL = "http://uksearchdev:8080";
+var baseURL = "http://uksearchdev:8080";
 //var baseURL = "http://g1cg1d:8080";
-var baseURL = "http://localhost:8080";
+//var baseURL = "http://localhost:8080";
 var viewpointAssetBasePath = "/viewpoint-services/v1/assets";
 var viewpointSSBasePath = "/viewpoint-services/v1/savedsearches";
 var viewpointSearchURL = baseURL + viewpointAssetBasePath;
@@ -138,24 +138,24 @@ $(window).load(function () {
 
 function setupNoOfAssetsToShow() {
 	$('#A1').click(function (e) {
-		range = "?from=1&to=10"
+		range = "?page=1&size=10"
 		pageSize = 10
 	});
 	$('#A2').click(function (e) {
-		range = "?from=1&to=20"
+		range = "?page=1&size=20"
 		pageSize = 20
 	});
 	$('#A3').click(function (e) {
 		pageSize = 30
-		range = "?from=1&to=30"
+		range = "?page=1&size=30"
 	});
 	$('#A4').click(function (e) {
 		pageSize = 40
-		range = "?from=1&to=40"
+		range = "?page=1&size=40"
 	});
 	$('#A5').click(function (e) {
 		pageSize = 50
-		range = "?from=1&to=50"
+		range = "?page=1&size=50"
 	});
 
 	$('#A6').click(function (e) {
@@ -378,19 +378,19 @@ function setupSearchDropdowns() {
 
 	$('#A8').click(function (e) {
 		SearchSavedSearchCase = "&case=sensitive";
-		$("#sensitivitychoice").html("case=sensitive");
+		$("#sensitivitychoice").html("sensitive");
 	});
 
 	$('#A9').click(function (e) {
 		SearchSavedSearchCase = "&case=insensitive";
-		$("#sensitivitychoice").html("case=insensitive");
+		$("#sensitivitychoice").html("insensitive");
 	});
 	$('#A12').click(function (e) {
-		range = "?from=1&to=10"
+		range = "?page=1&size=10"
 		pageSize = 10
 	});
 	$('#A13').click(function (e) {
-		range = "?from=1&to=20"
+		range = "?page=1&size=20"
 		pageSize = 20
 	});
 	$('#A10').click(function (e) {
