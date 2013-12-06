@@ -14,12 +14,31 @@ function saveNotificationTemplate() {
 }
 
 function isThereAnyNotificationTemplates(){
-	return false;
+	$.ajax({
+		type: "GET",
+		url: viewpointNotificationTemplateURL,
+		crossDomain: true,
+		dataType: "text"
+	})
+		.done(function (data) {
+			var searchResults = JSON.parse(data);
+
+			if (searchResults.data.metadata.totalRecords)
+			return true;
+				else
+			return false;
+		})
+		.error(function (msg) {
+			alert(msg.responseText);
+			return false;
+		});
 }
 function addNotificationEvent(eventName) {
 	theId = "eventID_" + increment;
+
 	if (isThereAnyNotificationTemplates())
 		return;
+
 	$("#eventList").append("<a href=\"#\" id=\"" + theId + "\" class=\"list-group-item\">" + eventName + "</a>");
 
 	$(".list-group-item").click(function (event) {

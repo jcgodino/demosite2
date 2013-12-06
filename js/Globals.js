@@ -1,11 +1,19 @@
-//var baseURL = "http://152.144.161.210:8080";
-//var baseURL = "http://uksearchdev:8080";
-//var baseURL = "http://g1cg1d:8080";
-var baseURL = "http://localhost:8080";
+//var hostURL = "http://152.144.161.210:8080";
+var hostURL = "http://uksearchdev:8080";
+//var hostURL = "http://g1cg1d:8080";
+//var hostURL = "http://localhost:8080";
+
+var baseServiceURL = "/viewpoint-services/v1";
+var serviceURL = hostURL + baseServiceURL;
+
 var viewpointAssetBasePath = "/viewpoint-services/v1/assets";
 var viewpointSSBasePath = "/viewpoint-services/v1/savedsearches";
-var viewpointSearchURL = baseURL + viewpointAssetBasePath;
-var viewpointSaveSearchURL = baseURL + viewpointSSBasePath;
+
+var viewpointSearchURL = hostURL + viewpointAssetBasePath;
+var viewpointSaveSearchURL = hostURL + viewpointSSBasePath;
+
+
+
 var incIndent = "&indent=true";
 var solrWriter = "&wt=json"
 var solrFieldList = "&fl=name,index_id";
