@@ -27,50 +27,49 @@
                 <b>Notification Templates Demo</b></h1>
         </div>
         <div class="panel-body">
-            Portal Team - Sprint 4 demo
+            Portal Team - Sprint 5 demo
         </div>
     </div>
     <div class="panel panel-default" style="width: 90%;">
         <div class="panel-heading">Notification Events</div>
         <div class="panel-body">
 
-            <div id="events">
-                <div id="addremoveevents" style="visibility: hidden">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default" onclick="addNotificationEvent()">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button" class="btn btn-default" onclick="removeNotificationEvent()" style="visibility: hidden">
-                            <span class="glyphicon glyphicon-minus"></span>
-                        </button>
-                    </div>
-                </div>
+            <!--<div id="events">-->
+                <!--<div id="addremoveevents" style="visibility: hidden">-->
+                    <!--<div class="btn-group">-->
+                        <!--<button type="button" class="btn btn-default" onclick="addNotificationEvent()">-->
+                            <!--<span class="glyphicon glyphicon-plus"></span>-->
+                        <!--</button>-->
+                        <!--<button type="button" class="btn btn-default" onclick="removeNotificationEvent()"-->
+                                <!--style="visibility: hidden">-->
+                            <!--<span class="glyphicon glyphicon-minus"></span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</div>-->
 
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-6 col-md-4 list-group">
+                            <span class="label label-primary">Events</span>
                             <ul id="eventList" class="list-group">
                             </ul>
                         </div>
 
                         <div class="col-xs-12 col-md-8">
-                            <div class="input-group" style="margin-bottom: 10px">
-                                <span class="input-group-addon">From</span>
+                            <form>
+                                <span class="label label-primary">From</span>
                                 <input type="text" class="form-control" placeholder="enter sender">
-                            </div>
-                            <div class="input-group" style="margin-bottom: 10px">
-                                <span class="input-group-addon">To</span>
+
+                                <span class="label label-primary">To</span>
                                 <input type="text" class="form-control" placeholder="enter recipient">
-                            </div>
-                            <div class="input-group" style="margin-bottom: 10px">
-                                <span class="input-group-addon">Subject</span>
+
+                                <span class="label label-primary">Subject</span>
                                 <input type="text" class="form-control" placeholder="enter subject">
-                            </div>
-                            <div style="margin-bottom: 10px">
-                                <h4><span class="label label-primary">email body</span></h4>
+
+                                <span class="label label-primary">email body</span>
                                 <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="saveNotificationTemplate()">Save</button>
+                            </form>
+                            <button type="button" class="btn btn-primary" onclick="saveNotificationTemplate()" style="margin-top: 10px; float: right">Save</button>
                         </div>
                     </div>
                 </div>
