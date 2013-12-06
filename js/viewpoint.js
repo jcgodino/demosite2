@@ -104,12 +104,12 @@ function init() {
 $(window).load(function () {
 	$('#engSelected').click(function (e) {
 		viewpointAssetBasePath = "/viewpoint-services/v1.0/en_EN/assets";
-		viewpointSearchURL = baseURL + viewpointAssetBasePath;
+		viewpointSearchURL = hostURL + viewpointAssetBasePath;
 	});
 
 	$('#turSelected').click(function (e) {
 		viewpointAssetBasePath = "/viewpoint-services/v1.0/tr_TR/assets";
-		viewpointSearchURL = baseURL + viewpointAssetBasePath;
+		viewpointSearchURL = hostURL + viewpointAssetBasePath;
 	});
 
 	$("#GetSearch").click(function () {

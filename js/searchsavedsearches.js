@@ -1,3 +1,4 @@
+
 function GetSavedSearchs() {
 	url1 = viewpointSaveSearchURL + "?page=1&size=1000";
 	$.ajax({

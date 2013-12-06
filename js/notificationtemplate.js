@@ -1,3 +1,5 @@
+var viewpointNotificationTemplateURL = serviceURL + "/notificationsTemplates";
+
 var increment = 1;
 var selectedEventID = "";
 
@@ -11,8 +13,13 @@ function saveNotificationTemplate() {
 	alert("saveNotificationTemplate()");
 }
 
+function isThereAnyNotificationTemplates(){
+	return false;
+}
 function addNotificationEvent(eventName) {
 	theId = "eventID_" + increment;
+	if (isThereAnyNotificationTemplates())
+		return;
 	$("#eventList").append("<a href=\"#\" id=\"" + theId + "\" class=\"list-group-item\">" + eventName + "</a>");
 
 	$(".list-group-item").click(function (event) {
