@@ -165,12 +165,12 @@ function getNotificationTemplates() {
 		crossDomain: true,
 		dataType: "text",
 		beforeSend: function () {
-			$('#savedSearchList').empty();
+			$('#templateList').empty();
+			$('#templatedetails').hide();
 		}
 	})
 		.done(function (data) {
-			$('#templateList').empty();
-			$('#templatedetails').hide();
+
 
 			var templateResults = JSON.parse(data);
 
