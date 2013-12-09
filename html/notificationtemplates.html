@@ -31,7 +31,7 @@
         </div>
     </div>
     <div>
-        <p id="notificationStatus" class="container"></p>
+        <p id="notificationStatus" class="container" style="width: 90%"></p>
     </div>
     <div class="panel panel-default" style="width: 90%;">
         <div class="panel-heading">Notification Events</div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="input-group" id="newNotificationName" style="width: 30%">
                         <input id="notificationNameEntry" type="text" class="form-control""
-                               onkeydown="if (event.keyCode == 13 ){return false;}"/>
+                        onkeydown="if (event.keyCode == 13 ){return false;}"/>
 
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button" onclick="onsaveNotification(event)">
@@ -73,7 +73,7 @@
                                 <input id="fromField" type="text" class="form-control" placeholder="enter sender">
 
                                 <span class="label label-primary">To</span>
-                                <input  id="toField" type="text" class="form-control" placeholder="enter recipient">
+                                <input id="toField" type="text" class="form-control" placeholder="enter recipient">
 
                                 <span class="label label-primary">Subject</span>
                                 <input id="subjectField" type="text" class="form-control" placeholder="enter subject">
@@ -81,7 +81,9 @@
                                 <span class="label label-primary">email body</span>
                                 <textarea id="emailBody" class="form-control" rows="3" placeholder="enter mail body"></textarea>
                             </form>
-                            <button type="button" class="btn btn-primary" onclick="updateNotificationTemplate()" style="margin-top: 10px; float: right">Save</button>
+                            <button type="button" class="btn btn-primary" onclick="updateNotificationTemplate()"
+                                    style="margin-top: 10px; float: right">Save
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -89,6 +91,19 @@
 
         </div>
 
+    </div>
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-body">
+            <pre id="templatedetails" class="container"></pre>
+
+            <a onclick="getNotificationTemplates()">Get list of templates <span>
+                <a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>
+            </span></a>
+
+            <div class="list-group" id="templateList">
+                <p id="templates" class="container"></p>
+            </div>
+        </div>
     </div>
 </div>
 </body>

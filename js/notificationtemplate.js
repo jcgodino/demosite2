@@ -4,24 +4,28 @@ var increment = 1;
 var selectedEventID = "";
 
 function getEmailTemplate(id) {
-	$("#"+selectedEventID).removeClass("active");
+	$("#" + selectedEventID).removeClass("active");
 	selectedEventID = id;
-	$("#"+selectedEventID).addClass("active");
+	$("#" + selectedEventID).addClass("active");
 
 	$.ajax({
 		type: "GET",
 		url: viewpointNotificationTemplateURL + "/" + selectedEventID,
 		//context: document.body,
 		crossDomain: true,
-		dataType: "text"
+		dataType: "json"
 		//async: false,
 		//jsonp: 'json.wrf'
 	})
 		.done(function (data) {
 			//$('#asset').html(JSON.stringify(data, undefined, 2));
 			$('#notificationStatus').removeClass("alert-danger");
-			$('#notificationStatus').html(data).addClass("alert alert-success").show();
-			//$('#asset').addClass("jumbotron").show();
+			$('#notificationStatus').html(JSON.stringify(data)).addClass("alert alert-success").show();
+
+			$("#fromField").val(data.data.fromEmailId);
+			$("#toField").val(data.data.toEmailId);
+			$("#subjectField").val(data.data.emailSubject);
+			$("#emailBody").val(data.data.emailBody);
 		})
 		.error(function (msg) {
 			$('#notificationStatus').removeClass("alert-success");
@@ -30,7 +34,7 @@ function getEmailTemplate(id) {
 		})
 }
 
-function  createNotificationTemplate() {
+function createNotificationTemplate() {
 	var jsonObj = {
 		name: $("#notificationNameEntry").val(),
 		fromEmailId: "fromEmailId@ao.com",
@@ -54,8 +58,8 @@ function  createNotificationTemplate() {
 			$('#notificationStatus').removeClass("alert-danger");
 			$("#notificationStatus").html("SAVED!!").addClass("alert alert-success").show();
 
-		    $('#eventList').append('<li><a href="#" id="' + data.data.id + '" class="list-group-item">' + $("#notificationNameEntry").val() + '</a></li>');
-			$(".list-group-item").click(function(event){
+			$('#eventList').append('<li><a href="#" id="' + data.data.id + '" class="list-group-item">' + $("#notificationNameEntry").val() + '</a></li>');
+			$(".list-group-item").click(function (event) {
 				getEmailTemplate(event.target.id);
 			})
 
@@ -74,7 +78,7 @@ function onsaveNotification(event) {
 }
 
 
-function isThereAnyNotificationTemplates(){
+function isThereAnyNotificationTemplates() {
 	$.ajax({
 		type: "GET",
 		url: viewpointNotificationTemplateURL,
@@ -85,9 +89,9 @@ function isThereAnyNotificationTemplates(){
 			var searchResults = JSON.parse(data);
 
 			if (searchResults.data.metadata.totalRecords)
-			return true;
-				else
-			return false;
+				return true;
+			else
+				return false;
 		})
 		.error(function (msg) {
 			//alert(msg.responseText);
@@ -108,7 +112,7 @@ function removeNotificationEvent() {
 		.done(function (data) {
 			$('#notificationStatus').removeClass("alert-danger");
 			$("#notificationStatus").html("Deleted").addClass("alert alert-success").show();
-			$("#"+selectedEventID).remove()
+			$("#" + selectedEventID).remove()
 		})
 		.error(function (msg) {
 			$('#notificationStatus').removeClass("alert-success");
@@ -122,7 +126,7 @@ function setupNotificationEventHandlers() {
 }
 
 function updateNotificationTemplate() {
-	var name = $("#"+selectedEventID).text();
+	var name = $("#" + selectedEventID).text();
 	var jsonObj = {
 		id: selectedEventID,
 		name: name,
@@ -151,4 +155,47 @@ function updateNotificationTemplate() {
 			$('#notificationStatus').removeClass("alert-success");
 			$("#notificationStatus").html(msg.responseText).addClass("alert alert-danger").show();
 		});
+}
+
+function getNotificationTemplates() {
+	url1 = viewpointNotificationTemplateURL + "?page=1&size=1000";
+	$.ajax({
+		type: "GET",
+		url: url1,// + SavedSearchRange + SavedSearchOrder,
+		crossDomain: true,
+		dataType: "text",
+		beforeSend: function () {
+			$('#savedSearchList').empty();
+		}
+	})
+		.done(function (data) {
+			$('#templateList').empty();
+			$('#templatedetails').hide();
+
+			var templateResults = JSON.parse(data);
+
+			if (templateResults.data.metadata.totalRecords)
+				$.each(templateResults.data.notificationTemplates, function (index, template) {
+					$('#templateList').append('<li><a href="#" id="' + template.id + '" class="list-group-item">' + template.name + '</a></li>');
+				});
+
+			$(".list-group-item").click(function (event) {
+				$.ajax({
+					type: "GET",
+					url: viewpointNotificationTemplateURL + "/" + event.target.id,
+					//context: document.body,
+					crossDomain: true,
+					dataType: "text"
+					//async: false,
+					//jsonp: 'json.wrf'
+				})
+					.done(function (data) {
+						//$('#asset').html(JSON.stringify(data, undefined, 2));
+						$('#templatedetails').removeClass("alert-danger");
+						$('#templatedetails').html(data).addClass("alert alert-success").show();
+						//$('#asset').addClass("jumbotron").show();
+					})
+//				getSavedSearchDetails(event.target.id);
+			});
+		})
 }
