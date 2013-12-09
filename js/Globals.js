@@ -1,7 +1,7 @@
 //var hostURL = "http://152.144.161.210:8080";
-var hostURL = "http://uksearchdev:8080";
+//var hostURL = "http://uksearchdev:8080";
 //var hostURL = "http://g1cg1d:8080";
-//var hostURL = "http://localhost:8080";
+var hostURL = "http://localhost:8080";
 
 var baseServiceURL = "/viewpoint-services/v1";
 var serviceURL = hostURL + baseServiceURL;

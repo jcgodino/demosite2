@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
     <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="notifications">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/notificationtemplate.js" afterPath="$PROJECT_DIR$/js/notificationtemplate.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Globals.js" afterPath="$PROJECT_DIR$/js/globals.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386601352837" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386602301200" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386245680118" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
     <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581722257" ignored="false" />
@@ -491,7 +491,11 @@
       <created>1386601379042</created>
       <updated>1386601379042</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="notifications">
+      <created>1386602306221</created>
+      <updated>1386602306221</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
