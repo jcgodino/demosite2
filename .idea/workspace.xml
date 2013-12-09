@@ -2,21 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
-    <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="search saved searches order">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/Globals.js" afterPath="$PROJECT_DIR$/js/globals.js" />
+    <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="notifications">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/navi.html" afterPath="$PROJECT_DIR$/html/navi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/notificationtemplate.js" afterPath="$PROJECT_DIR$/js/notificationtemplate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/notificationtemplates.html" afterPath="$PROJECT_DIR$/html/notificationtemplates.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386580822727" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386585360459" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386245680118" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
-    <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385118129723" ignored="false" />
+    <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581722257" ignored="false" />
     <file path="/navi.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385459643123" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/viewpoint/trunk/modules/services-accepttests/src/test/java/com/pb/viewpoint/service/savedsearch/SavedSearchAcceptanceTestBase.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385134569918" ignored="false" />
     <file path="$USER_HOME$/WorkspaceIntellij/trunk/modules/services-accepttests/src/test/java/com/pb/viewpoint/service/asset/SearchAssetsForScoreAcceptanceTests.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385386048536" ignored="false" />
     <file path="/savesearchdemo.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386245761727" ignored="false" />
-    <file path="/notificationtemplates.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386246065109" ignored="false" />
+    <file path="/notificationtemplates.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386590029822" ignored="false" />
+    <file path="$PROJECT_DIR$/../svn/viewpoint/trunk/modules/services/pom.xml" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581624953" ignored="false" />
+    <file path="/notificationtemplate.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386591410358" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,16 +84,34 @@
       <file leaf-file-name="viewpoint.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="1" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0">
+            <state line="176" column="15" selection-start="4142" selection-end="4157" vertical-scroll-proportion="-18.461538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchsavedsearches.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
+      <file leaf-file-name="searchsavedsearches.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/searchsavedsearches.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="920" selection-end="1254" vertical-scroll-proportion="0.0">
+            <state line="32" column="0" selection-start="977" selection-end="1641" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchdemo.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="44" selection-start="3974" selection-end="3993" vertical-scroll-proportion="-17.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navi.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/navi.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="80" selection-start="940" selection-end="940" vertical-scroll-proportion="-10.625">
               <folding />
             </state>
           </provider>
@@ -98,30 +120,39 @@
       <file leaf-file-name="notificationtemplates.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="7" selection-start="3724" selection-end="3724" vertical-scroll-proportion="-20.666666">
+            <state line="81" column="55" selection-start="3895" selection-end="3904" vertical-scroll-proportion="-9.9">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globals.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/globals.js">
+      <file leaf-file-name="notificationtemplate.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/notificationtemplate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="188" selection-start="988" selection-end="988" vertical-scroll-proportion="0.57771665">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="110" column="52" selection-start="3168" selection-end="3168" vertical-scroll-proportion="0.4635193">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navi.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/navi.html">
+      <file leaf-file-name="savesearchdemo.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/savesearchdemo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="726" selection-end="768" vertical-scroll-proportion="0.0">
+            <state line="53" column="0" selection-start="1508" selection-end="2144" vertical-scroll-proportion="-9.576923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="savesearchdemo.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="12" selection-start="2805" selection-end="2859" vertical-scroll-proportion="-4.5">
               <folding />
             </state>
           </provider>
@@ -146,20 +177,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/html/navi.html" />
         <option value="$PROJECT_DIR$/js/viewpoint.js" />
         <option value="$PROJECT_DIR$/js/searchsavedsearches.js" />
         <option value="$PROJECT_DIR$/html/searchsavedsearches.html" />
-        <option value="$PROJECT_DIR$/js/savesearchdemo.js" />
         <option value="$PROJECT_DIR$/html/savesearchdemo.html" />
-        <option value="$PROJECT_DIR$/html/notificationtemplates.html" />
         <option value="$PROJECT_DIR$/js/Globals.js" />
+        <option value="$PROJECT_DIR$/js/savesearchdemo.js" />
+        <option value="$PROJECT_DIR$/html/navi.html" />
+        <option value="$PROJECT_DIR$/html/notificationtemplates.html" />
+        <option value="$PROJECT_DIR$/js/notificationtemplate.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="221" />
-    <option name="y" value="196" />
+    <option name="x" value="547" />
+    <option name="y" value="252" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -454,14 +486,18 @@
       <created>1385139332521</created>
       <updated>1385139332521</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="notifications">
+      <created>1386581408245</created>
+      <updated>1386581408245</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="221" y="196" width="1936" height="1066" extended-state="0" />
-    <editor active="false" />
+    <frame x="547" y="252" width="1936" height="1066" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2035865" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20401691" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -472,19 +508,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32700422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1968254" sideWeight="0.7964135" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1968254" sideWeight="0.7959831" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -530,7 +566,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="search saved searches order" />
+    <option name="LAST_COMMIT_MESSAGE" value="notifications" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -549,6 +585,7 @@
     <MESSAGE value="case" />
     <MESSAGE value="Case sensitivity" />
     <MESSAGE value="search saved searches order" />
+    <MESSAGE value="notifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -558,13 +595,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="0" selection-start="5016" selection-end="5105" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/navi.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -607,67 +637,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/globals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="188" selection-start="988" selection-end="988" vertical-scroll-proportion="0.57931036">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/searchdemo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="56" selection-start="1900" selection-end="1940" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="1" selection-start="4345" selection-end="4345" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/navi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="726" selection-end="768" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/savesearchdemo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/searchsavedsearches.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="75" selection-start="346" selection-end="346" vertical-scroll-proportion="0.21337126">
+        <state line="85" column="44" selection-start="3974" selection-end="3993" vertical-scroll-proportion="-17.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/searchsavedsearches.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="920" selection-end="1254" vertical-scroll-proportion="0.0">
+        <state line="22" column="0" selection-start="920" selection-end="1254" vertical-scroll-proportion="-0.8987161">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/navi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="80" selection-start="940" selection-end="940" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/savesearchdemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="12" selection-start="2805" selection-end="2859" vertical-scroll-proportion="-4.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/viewpoint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="15" selection-start="4142" selection-end="4157" vertical-scroll-proportion="-18.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/searchsavedsearches.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="977" selection-end="1641" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/savesearchdemo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="1508" selection-end="2144" vertical-scroll-proportion="-9.576923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="7" selection-start="3724" selection-end="3724" vertical-scroll-proportion="-20.666666">
+        <state line="81" column="55" selection-start="3895" selection-end="3904" vertical-scroll-proportion="-9.9">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/globals.js">
+    <entry file="file://$PROJECT_DIR$/js/notificationtemplate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="188" selection-start="988" selection-end="988" vertical-scroll-proportion="0.57771665">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="110" column="52" selection-start="3168" selection-end="3168" vertical-scroll-proportion="0.4635193">
+          <folding />
         </state>
       </provider>
     </entry>
