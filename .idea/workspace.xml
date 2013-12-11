@@ -12,7 +12,7 @@
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386754781401" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386756213861" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386245680118" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
     <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581722257" ignored="false" />
@@ -24,8 +24,8 @@
     <file path="$PROJECT_DIR$/../svn/viewpoint/trunk/modules/services/pom.xml" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581624953" ignored="false" />
     <file path="/notificationtemplate.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386683331188" ignored="false" />
     <file path="/a.dummy" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386693226527" ignored="false" />
-    <file path="/notificationtemplateusingknockout.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386755815000" ignored="false" />
-    <file path="/notificationtemplateusingknockout.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386756039333" ignored="false" />
+    <file path="/notificationtemplateusingknockout.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386756481453" ignored="false" />
+    <file path="/notificationtemplateusingknockout.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386756778688" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,10 +89,12 @@
       <file leaf-file-name="notificationtemplateusingknockout.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/notificationtemplateusingknockout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="0" selection-start="1427" selection-end="1661" vertical-scroll-proportion="-2.4615386">
+            <state line="14" column="45" selection-start="670" selection-end="670" vertical-scroll-proportion="-5.730769">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,7 +103,7 @@
       <file leaf-file-name="notificationtemplateusingknockout.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/notificationtemplateusingknockout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.5618374">
+            <state line="10" column="56" selection-start="202" selection-end="202" vertical-scroll-proportion="0.30035335">
               <folding />
             </state>
           </provider>
@@ -110,7 +112,7 @@
       <file leaf-file-name="notificationtemplates.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-9.846154">
+            <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-22.23077">
               <folding />
             </state>
           </provider>
@@ -492,7 +494,11 @@
       <created>1386754791592</created>
       <updated>1386754791592</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="notifications">
+      <created>1386756217359</created>
+      <updated>1386756217359</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -694,26 +700,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
+    <entry file="file://$PROJECT_DIR$/html/notificationtemplateusingknockout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-9.846154">
-          <folding />
+        <state line="14" column="45" selection-start="670" selection-end="670" vertical-scroll-proportion="-5.730769">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/notificationtemplateusingknockout.html">
+    <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1427" selection-end="1661" vertical-scroll-proportion="-2.4615386">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-22.23077">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/notificationtemplateusingknockout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.5618374">
+        <state line="10" column="56" selection-start="202" selection-end="202" vertical-scroll-proportion="0.30035335">
           <folding />
         </state>
       </provider>

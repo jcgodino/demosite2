@@ -1,12 +1,13 @@
 var viewpointNotificationTemplateURL = serviceURL + "/notificationtemplates";
+var debugOn = false;
 
 var json = {
 	name: "",
 	id: "",
-	fromEmailId: ko.observable("from@ao.com"),
-	toEmailId: "to@ao.com",
-	emailSubject: "This is subject field",
-	emailBody: "The is the body of the email [Tasklink]"
+	fromEmailId: "",
+	toEmailId: "",
+	emailSubject: "",
+	emailBody: ""
 }
 
 var viewModel = {};
@@ -16,6 +17,8 @@ function NotificationViewModel() {
 	ko.applyBindings(viewModel);
 }
 function Initialise() {
+	if (!debugOn)
+		$("#debugPanel").hide();
 	NotificationViewModel();
 }
 
@@ -32,10 +35,9 @@ function getTemplate(id) {
 }
 
 function getNotifyTemplates() {
-	url1 = viewpointNotificationTemplateURL + "?page=1&size=1000";
 	$.ajax({
 		type: "GET",
-		url: url1,// + SavedSearchRange + SavedSearchOrder,
+		url: viewpointNotificationTemplateURL + "?page=1&size=1000",
 		crossDomain: true,
 		dataType: "text",
 		beforeSend: function () {
