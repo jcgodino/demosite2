@@ -10,6 +10,15 @@ var json = {
 	emailBody: ""
 }
 
+//var viewModel = {
+//	name: ko.observable(""),
+//	id: ko.observable(""),
+//	fromEmailId: ko.observable(""),
+//	toEmailId: ko.observable(""),
+//	emailSubject: ko.observable(""),
+//	emailBody: ko.observable("")
+//}
+
 var viewModel = {};
 
 function NotificationViewModel() {
