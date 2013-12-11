@@ -39,7 +39,7 @@ function createNotificationTemplate() {
 		name: $("#notificationNameEntry").val(),
 		fromEmailId: "fromEmailId@ao.com",
 		//defaultToEmailId: "defaultToEmailId",
-		toEmailId: "toEmailId@ao.com",
+		toEmailId: "fromEmailId@ao.com",
 		//errorToEmailId: "errorToEmailId",
 		emailSubject: "emailSubject",
 		emailBody: "emailBody"
@@ -77,27 +77,6 @@ function onsaveNotification(event) {
 	createNotificationTemplate();
 }
 
-
-function isThereAnyNotificationTemplates() {
-	$.ajax({
-		type: "GET",
-		url: viewpointNotificationTemplateURL,
-		crossDomain: true,
-		dataType: "text"
-	})
-		.done(function (data) {
-			var searchResults = JSON.parse(data);
-
-			if (searchResults.data.metadata.totalRecords)
-				return true;
-			else
-				return false;
-		})
-		.error(function (msg) {
-			//alert(msg.responseText);
-			return false;
-		});
-}
 function addNotificationEvent(eventName) {
 	$("#newNotificationName").slideToggle();
 }
@@ -118,11 +97,6 @@ function removeNotificationEvent() {
 			$('#notificationStatus').removeClass("alert-success");
 			$("#notificationStatus").html(msg.responseText).addClass("alert alert-danger").show();
 		});
-}
-
-
-function setupNotificationEventHandlers() {
-	$("#newNotificationName").slideToggle(0);
 }
 
 function updateNotificationTemplate() {
@@ -198,4 +172,8 @@ function getNotificationTemplates() {
 //				getSavedSearchDetails(event.target.id);
 			});
 		})
+}
+
+function setupNotificationEventHandlers() {
+	$("#newNotificationName").slideToggle(0);
 }

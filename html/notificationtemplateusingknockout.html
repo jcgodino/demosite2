@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification Templates using Knockout js</title>
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="../js/knockout.mapping-2.4.1.js"></script>
+    <script type="text/javascript" src="../js/notificationtemplateusingknockout.js"></script>
+    <script type="text/javascript">
+        Initialise();
+    </script>
+</head>
+<body>
+<div class="panel-body">
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-heading">
+            <h1 class="panel-title">
+                <b>Notification Templates Demo</b></h1>
+        </div>
+        <div class="panel-body">
+            Portal Team - Sprint 5 demo
+        </div>
+    </div>
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-body">
+            <pre data-bind="text: ko.toJSON(viewModel, null, 2)" class="container"></pre>
+        </div>
+    </div>
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 list-group">
+                    <a onclick="getNotifyTemplates()">Get list of templates <span>
+                <a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>
+            </span></a>
+
+                    <div class="list-group" id="templateList2">
+                        <p id="templates2" class="container"></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-8">
+                    <form>
+                        <span class="label label-primary">From</span>
+                        <input type="text" class="form-control" placeholder="enter sender" data-bind="value: fromEmailId">
+
+                        <span class="label label-primary">To</span>
+                        <input type="text" class="form-control" placeholder="enter recipient" data-bind="value: toEmailId">
+
+                        <span class="label label-primary">Subject</span>
+                        <input type="text" class="form-control" placeholder="enter subject" data-bind="value: emailSubject">
+
+                        <span class="label label-primary">email body</span>
+                        <textarea class="form-control" rows="3" placeholder="enter mail body"
+                                  data-bind="value: emailBody"></textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="width: 90%;">
+        <div class="panel-body">
+            <!--<a onclick="getNotifyTemplates()">Get list of templates <span>-->
+            <!--<a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>-->
+            <!--</span></a>-->
+
+            <!--<div class="list-group" id="templateList2">-->
+            <!--<p id="templates2" class="container"></p>-->
+            <!--</div>-->
+        </div>
+    </div>
+</body>
+</html>
