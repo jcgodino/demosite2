@@ -6,18 +6,13 @@
   <component name="ChangeListManager">
     <list id="47b2e86e-c4c2-43ad-aebb-43666933c262" name="Default" comment="" />
     <list default="true" id="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" name="New changelist" comment="notifications">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/knockout-3.0.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/knockout.mapping-2.4.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/notificationtemplateusingknockout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/notificationtemplateusingknockout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/navi.html" afterPath="$PROJECT_DIR$/html/navi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/notificationtemplate.js" afterPath="$PROJECT_DIR$/js/notificationtemplate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/notificationtemplates.html" afterPath="$PROJECT_DIR$/html/notificationtemplates.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/notificationtemplateusingknockout.html" afterPath="$PROJECT_DIR$/html/notificationtemplateusingknockout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/notificationtemplateusingknockout.js" afterPath="$PROJECT_DIR$/js/notificationtemplateusingknockout.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="demosite2.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386673949832" ignored="false" />
+    <file path="/Dummy.txt" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386754781401" ignored="false" />
     <file path="/searchsavedsearches.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386245680118" ignored="false" />
     <file path="/viewpoint.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1385137617586" ignored="false" />
     <file path="/fragment.java" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581722257" ignored="false" />
@@ -29,8 +24,8 @@
     <file path="$PROJECT_DIR$/../svn/viewpoint/trunk/modules/services/pom.xml" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386581624953" ignored="false" />
     <file path="/notificationtemplate.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386683331188" ignored="false" />
     <file path="/a.dummy" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386693226527" ignored="false" />
-    <file path="/notificationtemplateusingknockout.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386696753239" ignored="false" />
-    <file path="/notificationtemplateusingknockout.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386752978953" ignored="false" />
+    <file path="/notificationtemplateusingknockout.html" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386755815000" ignored="false" />
+    <file path="/notificationtemplateusingknockout.js" changelist="0cee50c5-f450-4ae6-ae6b-3d5c425e9197" time="1386756039333" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,22 +86,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="notificationtemplateusingknockout.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="notificationtemplateusingknockout.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/notificationtemplateusingknockout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="7" selection-start="3692" selection-end="3692" vertical-scroll-proportion="1.3616236">
+            <state line="35" column="0" selection-start="1427" selection-end="1661" vertical-scroll-proportion="-2.4615386">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notificationtemplateusingknockout.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="notificationtemplateusingknockout.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/notificationtemplateusingknockout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1437" selection-end="1437" vertical-scroll-proportion="0.0">
+            <state line="52" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.5618374">
               <folding />
             </state>
           </provider>
@@ -115,7 +110,7 @@
       <file leaf-file-name="notificationtemplates.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="50" selection-start="4907" selection-end="4907" vertical-scroll-proportion="-17.038462">
+            <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-9.846154">
               <folding />
             </state>
           </provider>
@@ -124,7 +119,7 @@
       <file leaf-file-name="notificationtemplate.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/notificationtemplate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="0" selection-end="78" vertical-scroll-proportion="0.0">
+            <state line="101" column="0" selection-start="3119" selection-end="4152" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -161,8 +156,8 @@
         <option value="$PROJECT_DIR$/html/notificationtemplates.html" />
         <option value="$PROJECT_DIR$/js/notificationtemplate.js" />
         <option value="$PROJECT_DIR$/js/knockout.mapping-2.4.1.js" />
-        <option value="$PROJECT_DIR$/js/notificationtemplateusingknockout.js" />
         <option value="$PROJECT_DIR$/html/notificationtemplateusingknockout.html" />
+        <option value="$PROJECT_DIR$/js/notificationtemplateusingknockout.js" />
       </list>
     </option>
   </component>
@@ -493,14 +488,18 @@
       <created>1386602306221</created>
       <updated>1386602306221</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="notifications">
+      <created>1386754791592</created>
+      <updated>1386754791592</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34653464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3472988" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3058306" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -512,17 +511,17 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32700422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19637139" sideWeight="0.65346533" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19637139" sideWeight="0.6527012" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -672,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/notificationtemplate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="0" selection-end="78" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/knockout.mapping-2.4.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="111" selection-start="9671" selection-end="9671" vertical-scroll-proportion="0.6030405">
@@ -695,27 +687,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
+    <entry file="file://$PROJECT_DIR$/js/notificationtemplate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="50" selection-start="4907" selection-end="4907" vertical-scroll-proportion="-17.038462">
+        <state line="101" column="0" selection-start="3119" selection-end="4152" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/notificationtemplateusingknockout.js">
+    <entry file="file://$PROJECT_DIR$/html/notificationtemplates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1437" selection-end="1437" vertical-scroll-proportion="0.0">
+        <state line="34" column="76" selection-start="1253" selection-end="1321" vertical-scroll-proportion="-9.846154">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/notificationtemplateusingknockout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="7" selection-start="3692" selection-end="3692" vertical-scroll-proportion="1.3616236">
+        <state line="35" column="0" selection-start="1427" selection-end="1661" vertical-scroll-proportion="-2.4615386">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/notificationtemplateusingknockout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1422" selection-end="1422" vertical-scroll-proportion="1.5618374">
+          <folding />
         </state>
       </provider>
     </entry>

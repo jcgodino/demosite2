@@ -1,22 +1,34 @@
 var viewpointNotificationTemplateURL = serviceURL + "/notificationtemplates";
 
 var json = {
-	name : "",
-	id : "",
-	fromEmailId : ko.observable("from@ao.com"),
-	toEmailId : "to@ao.com",
-	emailSubject : "This is subject field",
-	emailBody : "The is the body of the email [Tasklink]"
+	name: "",
+	id: "",
+	fromEmailId: ko.observable("from@ao.com"),
+	toEmailId: "to@ao.com",
+	emailSubject: "This is subject field",
+	emailBody: "The is the body of the email [Tasklink]"
 }
 
 var viewModel = {};
 
-function NotificationViewModel(){
+function NotificationViewModel() {
 	viewModel = ko.mapping.fromJS(json);
 	ko.applyBindings(viewModel);
 }
 function Initialise() {
 	NotificationViewModel();
+}
+
+function getTemplate(id) {
+	$.ajax({
+		type: "GET",
+		url: viewpointNotificationTemplateURL + "/" + id,
+		crossDomain: true,
+		dataType: "text"
+	}).done(function (data) {
+			var json = JSON.parse(data);
+			ko.mapping.fromJS(json.data, viewModel);
+		});
 }
 
 function getNotifyTemplates() {
@@ -29,31 +41,34 @@ function getNotifyTemplates() {
 		beforeSend: function () {
 			$('#templateList2').empty();
 		}
-	})
-		.done(function (data) {
-
-
+	}).done(function (data) {
 			var templateResults = JSON.parse(data);
-
 			if (templateResults.data.metadata.totalRecords)
 				$.each(templateResults.data.notificationTemplates, function (index, template) {
 					$('#templateList2').append('<li><a href="#" id="' + template.id + '" class="list-group-item">' + template.name + '</a></li>');
 				});
 
 			$(".list-group-item").click(function (event) {
-				$.ajax({
-					type: "GET",
-					url: viewpointNotificationTemplateURL + "/" + event.target.id,
-					//context: document.body,
-					crossDomain: true,
-					dataType: "text"
-					//async: false,
-					//jsonp: 'json.wrf'
-				})
-					.done(function (data) {
-						var json = JSON.parse(data);
-						ko.mapping.fromJS(json.data, viewModel);
-					})
+				getTemplate(event.target.id)
 			});
 		})
+}
+
+function updateNotifyTemplate() {
+	var jsonObj = ko.mapping.toJS(viewModel);
+	$.ajax({
+		type: "PUT",
+		url: viewpointNotificationTemplateURL + "/" + jsonObj.id,
+		contentType: "application/json",
+		data: JSON.stringify(jsonObj),
+		dataType: 'json'
+	})
+		.done(function (data) {
+			$('#updateStatus').removeClass("alert-danger");
+			$("#updateStatus").html("Updated").addClass("alert alert-success").show()
+		})
+		.error(function (msg) {
+			$('#updateStatus').removeClass("alert-success");
+			$("#updateStatus").html(msg.responseText).addClass("alert alert-danger").show();
+		});
 }

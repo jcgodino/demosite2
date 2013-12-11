@@ -33,18 +33,20 @@
             Portal Team - Sprint 5 demo
         </div>
     </div>
-    <div class="panel panel-default" style="width: 90%;">
-        <div class="panel-body">
-            <pre data-bind="text: ko.toJSON(viewModel, null, 2)" class="container"></pre>
-        </div>
-    </div>
+    <!--<div class="panel panel-default" style="width: 90%;">-->
+        <!--<div class="panel-body">-->
+            <!--<pre data-bind="text: ko.toJSON($root, null, 2)" class="container"></pre>-->
+        <!--</div>-->
+    <!--</div>-->
     <div class="panel panel-default" style="width: 90%;">
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-6 col-md-4 list-group">
-                    <a onclick="getNotifyTemplates()">Get list of templates <span>
-                <a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>
-            </span></a>
+                    <a onclick="getNotifyTemplates()">Get list of templates
+                        <span>
+                            <a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>
+                        </span>
+                    </a>
 
                     <div class="list-group" id="templateList2">
                         <p id="templates2" class="container"></p>
@@ -65,19 +67,12 @@
                         <textarea class="form-control" rows="3" placeholder="enter mail body"
                                   data-bind="value: emailBody"></textarea>
                     </form>
+                    <button type="button" class="btn btn-primary" onclick="updateNotifyTemplate()"
+                            style="margin-top: 10px; float: right">Update
+                    </button>
+                    <p id="updateStatus" class="container" style="width: 80%"></p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="panel panel-default" style="width: 90%;">
-        <div class="panel-body">
-            <!--<a onclick="getNotifyTemplates()">Get list of templates <span>-->
-            <!--<a onclick="$('#templateList').empty(); $('#templatedetails').hide()">(clear)</a>-->
-            <!--</span></a>-->
-
-            <!--<div class="list-group" id="templateList2">-->
-            <!--<p id="templates2" class="container"></p>-->
-            <!--</div>-->
         </div>
     </div>
 </body>
