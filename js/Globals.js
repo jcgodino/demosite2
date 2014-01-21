@@ -8,11 +8,12 @@ var serviceURL = hostURL + baseServiceURL;
 
 var viewpointAssetBasePath = "/viewpoint-services/v1/assets";
 var viewpointSSBasePath = "/viewpoint-services/v1/savedsearches";
+var viewpointWFBasePath = "/viewpoint-services/v1/resolution/rule";
 
 var viewpointSearchURL = hostURL + viewpointAssetBasePath;
 var viewpointSaveSearchURL = hostURL + viewpointSSBasePath;
 
-
+var viewpointWorkflowURL = hostURL + viewpointWFBasePath;
 
 var incIndent = "&indent=true";
 var solrWriter = "&wt=json"
