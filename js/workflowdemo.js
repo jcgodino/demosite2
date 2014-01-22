@@ -5,7 +5,7 @@
 
     $.ajax({
         type: "GET",
-        url: viewpointWorkflowURL + "/" + id,
+        url: viewpointWorkflowURL + "?template=" + id + "&submitter=0",
         crossDomain: true,
         dataType: "text"
     })
@@ -57,7 +57,7 @@ function deleteWorkflow(id) {
 
     $.ajax({
         type: "DELETE",
-        url: viewpointWorkflowURL + "/" + $("workflowid3").val(),
+        url: viewpointWorkflowRuleURL + "/" + $("#workflowid3").val(),
         crossDomain: true,
         dataType: "text"
     })
