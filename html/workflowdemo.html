@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Workflow Rest Api Demo</title>
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/knockout-3.0.0.js"></script>
+    <script type="text/javascript" src="../js/knockout.mapping-2.4.1.js"></script>
+    <script type="text/javascript" src="../js/workflowdemo.js"></script>
+    <script type="text/javascript">
+        Initialise();
+    </script>
+</head>
+<body>
+ <div style="width: 90%; padding-top: 25px; padding-left :25px">   
+ <div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Create Workflow</h3>
+  </div>
+  <div class="panel-body">
+    <div class="well well-sm" style="display:inline-block">Jason ObjectWhile not always necessary, <br>sometimes you need to put your DOM in a box.<br> For those situations, try the panel component.</div>
+    <button type="button" id="craeteworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">Create WorkFlow</button>
+  </div>
+</div>
+    
+    <div class="panel panel-default" style="width: 90%;">
+     <div class="panel-heading">
+       <h3 class="panel-title">Set a Template</h3></div>
+        <div class="panel-body" >
+         <h3>Workflow ID<span class="label label-default">:</span></h3>
+         <div ><h3>Associations<span class="label label-default"></span></h3>
+          <div class="panel panel-default" style="width:70%;">
+           <div class="panel-body">
+            <form>
+              <input type="radio"style="padding-right:10px" name="templateid"value="template1"/>Template 1<br/>
+              <input type="radio"style="padding-right:10px" name="templateid"value="template2"/>Template 2<br/>
+              <input type="radio"style="padding-right:10px" name="templateid"value="template3"/>Template 3<br/>
+             </form>
+           </div>
+        </div>
+         <button type="button" id="addtemplates"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">Add Templates</button> 
+       </div>
+    </div>
+     </div>
+    
+
+<div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Get Workflow</h3>
+  </div>
+  <div class="panel-body">
+    <div class="input-append"><span class="label label-default">Work Flow ID</span><input class="span2" id="workflowid1" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
+    <button type="button" id="getworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="getWorkFlow('')">Get Workflow</button>
+  </div>
+   <div class="list-group" id="Div2">
+      <p id="P4" style="padding-left: 30px; visibility:hidden">Here's the response: </p>
+      <p id="P5" class="container"></p>
+    </div>
+</div>
+
+<div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Update Workflow</h3>
+  </div>
+  <div class="panel-body">
+    <div class="input-append"><span class="label label-default">Work Flow ID</span><input class="span2" id="workflowid2" type="text"></div>
+    <div class="input-append"><span class="label label-default">Associating ID</span><input class="span2" id="associatingid" type="text"></div>
+    <button type="button" id="updateworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">Update Workflow</button>
+  </div>
+</div>
+
+
+
+<div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Delete Workflow</h3>
+  </div>
+  <div class="panel-body">
+    <div class="input-append"><span class="label label-default">Work Flow ID</span><input class="span2" id="workflowid3" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
+    <button type="button" id="deleteworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="deleteWorkflow('')">Delete Workflow</button>
+  </div>
+   <div class="list-group" id="assetsList">
+     <p id="P1" style="padding-left: 30px; visibility:hidden">Here's the response: </p>
+     <p id="P6" class="container"></p>
+   </div>
+</div>
+
+<div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Progress</h3>
+  </div>
+  <div class="panel-body">
+    Active WorkFlow List
+           <pre id="activeworkflows" class="container"></pre>
+
+            <a id="myGetsactiveworflows" onclick="GetSavedSearchs()" style="padding-bottom: 10px;">Get all Workflows
+                <span><a onclick="$('#savedSearchList').empty()" style="margin-left: 15px">(clear)</a> </span>
+            </a>
+            <br>
+
+            <div class="list-group" id="savedSearchList">
+                <p id="searches" class="container"></p>
+            </div>
+  </div>
+</div>
+<div class="panel panel-default" style="width: 90%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Status Of Workflow</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+    <button type="button" id="refresh"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">refresh</button>
+  </div>
+</div>
+  </div> 
+</body>
+</html>
