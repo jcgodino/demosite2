@@ -23,30 +23,57 @@
 		    //alert(msg.responseText)
 		});
 }
-
-function updateWorkflow() {
+function associatetemplate() {
 
     var jsonObj = {
-        id: $("#GetSearchIP").val(),
-        name: $("#updatesavedsearch").val(),
-        query: $("#updatesavedsearchurl").val()
+        //workflow ID needs to passed on from the previous panel
+        workflowId: $("#workflowid").val(),
+        associatedId: $("#templateid").val(),
+        type: "template"
     }
 
     $.ajax({
-        type: "PUT",
-        url: viewpointSSBasePath + "/" + $("#GetSearchIP").val(),
+        type: "POST",
+        url: viewpointWorkflowRuleURL ,
         contentType: "application/json",
         data: JSON.stringify(jsonObj),
         //error: function (data) { alert("ajax error"); },
         dataType: 'json'
     })
 		.done(function (data) {
-		    $('#updatesavedsearchStatus').removeClass("alert-danger");
-		    $("#updatesavedsearchStatus").html("SAVED!!").addClass("alert alert-success").show()
+		    $('#associationStatus').removeClass("alert-danger");
+		    $("#associationStatus").html("Template Asscoiated!!").addClass("alert alert-success").show()
 		})
 		.error(function (msg) {
-		    $('#updatesavedsearchStatus').removeClass("alert-success");
-		    $("#updatesavedsearchStatus").html(msg.responseText).addClass("alert alert-danger").show();
+		    $('#associationStatus').removeClass("alert-success");
+		    $("#associationStatus").html(msg.responseText).addClass("alert alert-danger").show();
+		});
+}
+
+function updateWorkflow() {
+
+    var jsonObj = {
+        id : $("#workflowid2").val(),
+        workflowId: $("#workflowid2").val(),
+        associatedId: $("#associatingid").val(),
+        type: "template"
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: viewpointWorkflowRuleURL + "/" + $("#workflowid2").val(),
+        contentType: "application/json",
+        data: JSON.stringify(jsonObj),
+        //error: function (data) { alert("ajax error"); },
+        dataType: 'json'
+    })
+		.done(function (data) {
+		    $('#updateworkflowStatus').removeClass("alert-danger");
+		    $("#updateworkflowStatus").html("Updated!!").addClass("alert alert-success").show()
+		})
+		.error(function (msg) {
+		    $('#updateworkflowStatus').removeClass("alert-success");
+		    $("#updateworkflowStatus").html(msg.responseText).addClass("alert alert-danger").show();
 		});
 }
 
