@@ -29,106 +29,27 @@
     <h3 class="panel-title">Create Workflow In BPMN Engine</h3>
   </div>
   <div class="panel-body">
-    <div class="well well-sm" style="display:inline-block">Json Object that will create One step workflow<br> This will return a ID for that WorkfLow Paste the Jason In</div>
-    ?So this might need to create the BPMN engine represtention and submit it to engine and get the ID.
-    <button type="button" id="craeteworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">Create WorkFlow</button>
+    <table class="table table-bordered">
+        <tr>
+            <th>Workflow</th><th>Submitter ID</th><th>Type</th><th>Percentage %</th><th>statues</th>
+        </tr>
+        <tr class="success">
+            <td >1</td><td >10</td><td >Submitter</td><td >40</td><td><p id="R1" class="container"></p></td><td><button type="button" id="rule1"class="btn btn-default navbar-btn" onclick="createresolutionrule1()"style="float: right; bottom: 0;">Create</button></td>
+        </tr>
+        <tr class="warning">
+            <td>2</td><td>55</td><td>Template</td><td>40%</td><td><p id="R2" class="container"></td><td><button type="button" id="rule2"class="btn btn-default navbar-btn" onclick="createresolutionrule2()"style="float: right; bottom: 0;">Create</button></td>
+        </tr>
+        <tr class="success">
+            <td>3</td><td>10</td><td>Submitter</td><td>50%</td><td><p id="R3" class="container"></td><td><button type="button" id="rule3"class="btn btn-default navbar-btn" onclick="createresolutionrule3()"style="float: right; bottom: 0;">Create</button></td>
+        </tr>
+    </table>
+    <button type="button" id="craeteworkflow"class="btn btn-default navbar-btn" onclick="getworkflowforsubmitter()" style="float: right; bottom: 0;">Get workflow</button>
+    <div id="Wid"></div>
+    <div id="statues"></div>
   </div>
 </div>
     
-    <div class="panel panel-default" style="width: 90%;">
-     <div class="panel-heading">
-       <h3 class="panel-title">Associate Workflow with Template ID</h3>
-        <div class="panel-body" >
-        Create a resolutin rule where you associate a template Id with the workflow created.
-         <h3>Workflow ID :<span class="label label-default"></span></h3><input class="span2" id="workflowid" type="text" value="Get's the newly created workflow ID " />
-         <div ><h3>Associations<span class="label label-default"></span></h3>
-          <div class="panel panel-default" style="width:70%;">
-           <div class="panel-body">
-            <span class="label label-default">Template ID</span><input class="span2" id="templateid" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
-           </div>
-        </div>
-         <button type="button" id="addtemplates"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="associatetemplate('')">Add Templates</button> 
-       </div>
-    </div>
-     </div>
-    
-
-<div class="panel panel-default" style="width: 90%;">
-  <div class="panel-heading">
-    <h3 class="panel-title">Get Workflow Associated with the template</h3>
-  </div>
-  <div class="panel-body">
-    <div class="input-append"><span class="label label-default">Template ID</span><input class="span2" id="workflowid1" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
-    This Button will start the worklow associated with the template as well, this will be a two step opertaion, this will resul the workflow id from the template Id and will start.
-    <button type="button" id="getworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="getWorkFlow('')">Start Workflow</button>
-  </div>
-   <div class="list-group" id="Div2">
-      <p id="P4" style="padding-left: 30px; visibility:hidden">Here's the response: </p>
-      <p id="P5" class="container"></p>
-    </div>
-    <!--polish service to instainate the workflow and based on the teplate ID and run it.-->
-</div>
-<div class="panel panel-default" style="width: 90%;">
-  <div class="panel-heading">
-    <h3 class="panel-title">Statues of the worklow</h3>
-    <!-- Polish service to get status have approve and reject button hhere service will be called to approve or reject get something back // call status again to show that workflow is terminated. -->
-  </div>
-  <div class="panel-body">
-  <h5>In this Panel we show the workflows that are avilable and we should be able to approve or reject steps here and show the returned status, based on the status of the workflow which it is in you can have a approve or reject buttons. Which will then call the service to call the engine to approve or reject the step. Have a button to show the current status</h5>
-    Active WorkFlow List
-           <pre id="activeworkflows" class="container"></pre>
-
-            <a id="myGetsactiveworflows" onclick="GetSavedSearchs()" style="padding-bottom: 10px;">Get all Workflows
-                <span><a onclick="$('#savedSearchList').empty()" style="margin-left: 15px">(clear)</a> </span>
-            </a>
-            <br>
-
-            <div class="list-group" id="savedSearchList">
-                <p id="searches" class="container"></p>
-            </div>
-            <button type="button" id="refresh status"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">refresh</button>
-  </div>
-</div>
-<div class="panel panel-default" style="width: 90%; visibility:hidden">
-  <div class="panel-heading">
-    <h3 class="panel-title">Status Of Workflow</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-    <button type="button" id="refresh"class="btn btn-default navbar-btn" style="float: right; bottom: 0;">refresh</button>
-  </div>
-</div>
-  </div>
-  
-  <div class="panel panel-default" style="width: 90%; visibility:hidden">
-  <div class="panel-heading">
-    <h3 class="panel-title">Update Rsolution Rule</h3>
-  </div>
-  <div class="panel-body">
-    <div class="input-append"><span class="label label-default">Rule ID</span><input class="span2" id="workflowid2" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
-    <div class="input-append"><span class="label label-default">Associating ID</span><input class="span2" id="associatingid" type="text"></div>
-    <button type="button" id="updateworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="updateWorkflow('')">Update Workflow</button>
-  </div>
-   <div class="list-group" id="Div1">
-       <p id="P2" style="padding-left: 30px; visibility:hidden">Here's the response: </p>
-       <p id="updateworkflowStatus" class="container"></p>
-   </div>
-</div>
-
-
-
-<div class="panel panel-default" style="width: 90%; visibility:hidden">
-  <div class="panel-heading">
-    <h3 class="panel-title">Delete Workflow Rule</h3>
-  </div>
-  <div class="panel-body">
-    <div class="input-append"><span class="label label-default">Rule ID</span><input class="span2" id="workflowid3" type="text" onkeyup="onKeyUpCalled(event)" onkeydown="if (event.keyCode == 13 ){return false;}"></div>
-    <button type="button" id="deleteworkflow"class="btn btn-default navbar-btn" style="float: right; bottom: 0;" onclick="deleteWorkflow('')">Delete Workflow Rule</button>
-  </div>
-   <div class="list-group" id="assetsList">
-     <p id="P1" style="padding-left: 30px; visibility:hidden">Here's the response: </p>
-     <p id="P6" class="container"></p>
-   </div>
+   
 </div> 
 </body>
 </html>
