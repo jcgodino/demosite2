@@ -1,36 +1,14 @@
-﻿function getWorkFlow(id) {
-    if (id === "") {
-        id = $("#workflowid1").val();
-    }
-
-    $.ajax({
-        type: "GET",
-        url: viewpointWorkflowURL + "?template=" + id + "&submitter=0",
-        crossDomain: true,
-        dataType: "text"
-    })
-		.done(function (data) {
-		    $('#P5').removeClass("alert-danger");
-		    $("#P5").html(data).addClass("alert alert-success").show();
-		    //$("#updatesavedsearch").val(JSON.parse(data).data.name);
-		    //$("#updatesavedsearchurl").val(JSON.parse(data).data.query);
-		})
-		.error(function (msg) {
-		    $('#P5').removeClass("alert-success");
-		    $("#P5").html(msg.responseText).addClass("alert alert-danger").show();
-		    //$("#updatesavedsearch").val("");
-		    //$("#updatesavedsearchurl").val("");
-		    //alert(msg.responseText)
-		});
-}
+﻿var id1 = "";
+var id2 = "";
+var id3 = "";
 function createresolutionrule1() {
 
     var jsonObj = {
         //workflow ID needs to passed on from the previous panel
-        "workflowId": $("td:eq( 0 )").html(),
-        "associatedId": $("td:eq( 1 )").html(),
+        "workflowId": $("tr:eq( 1 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 1 ) td:eq( 1 ) input").val(),
         "type": $("td:eq( 2 )").html(),
-        "percentage": $("td:eq( 3 )").html()
+        "percentage": $("tr:eq( 1 ) td:eq( 3 ) input").val()
     }
 
     $.ajax({
@@ -42,7 +20,10 @@ function createresolutionrule1() {
     })
 		.done(function (data) {
 		    $('#R1').removeClass("alert-danger");
-		    $("#R1").html("Rule Created").addClass("alert alert-success").show()
+		    $("#R1").html("Rule Created").addClass("alert alert-success").show();
+		    $("#rule1").attr("disabled", true);
+		    id1 = data.data.id;
+		    console.log(id1);
 		})
 		.error(function (msg) {
 		    $('#R1').removeClass("alert-success");
@@ -51,14 +32,49 @@ function createresolutionrule1() {
 
 
 }
+
+function updateresolutionrule1() {
+
+    var jsonObj = {
+        //workflow ID needs to passed on from the previous panel
+        "id": id1,
+        "workflowId": $("tr:eq( 1 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 1 ) td:eq( 1 ) input").val(),
+        "type": $("td:eq( 2 )").html(),
+        "percentage": $("tr:eq( 1 ) td:eq( 3 ) input").val()
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/viewpoint-services/v1/community/resolution/rules/"+id1,
+        contentType: "application/json",
+        data: JSON.stringify(jsonObj),
+        dataType: 'json'
+    })
+		.done(function (data) {
+		    $('#R1').removeClass("alert-danger");
+		    $("#R1").html("Rule Updated").addClass("alert alert-success").show();
+		    $("#rule1").attr("disabled", true);
+		    console.log("data.data.id");
+		    
+		})
+		.error(function (msg) {
+		    $('#R1').removeClass("alert-success");
+		    $("#R1").html(msg.responseText).addClass("alert alert-danger").show();
+		});
+
+
+}
+
+
 function createresolutionrule2() {
 
     var jsonObj = {
         //workflow ID needs to passed on from the previous panel
-        "workflowId": 2,
-        "associatedId": 55,
-        "type": "template",
-        "percentage": "40"
+        "workflowId": $("tr:eq( 2 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 2 ) td:eq( 1 ) input").val(),
+        "type": $("tr:eq( 2 ) td:eq( 2 )").html(),
+        "percentage": $("tr:eq( 2 ) td:eq( 3 ) input").val()
     }
 
     $.ajax({
@@ -70,7 +86,42 @@ function createresolutionrule2() {
     })
 		.done(function (data) {
 		    $('#R2').removeClass("alert-danger");
-		    $("#R2").html("Rule Created").addClass("alert alert-success").show()
+		    $("#R2").html("Rule Created").addClass("alert alert-success").show();
+		    $("#rule2").attr("disabled", true);
+		    id2 = data.data.id;
+		})
+		.error(function (msg) {
+		    $('#R2').removeClass("alert-success");
+		    $("#R2").html(msg.responseText).addClass("alert alert-danger").show();
+		});
+
+
+}
+
+function updateresolutionrule2() {
+
+    var jsonObj = {
+        //workflow ID needs to passed on from the previous panel
+        "id": id2,
+        "workflowId": $("tr:eq( 2 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 2 ) td:eq( 1 ) input").val(),
+        "type": $("tr:eq( 2 ) td:eq( 2 )").html(),
+        "percentage": $("tr:eq( 2 ) td:eq( 3 ) input").val()
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/viewpoint-services/v1/community/resolution/rules/" + id2,
+        contentType: "application/json",
+        data: JSON.stringify(jsonObj),
+        dataType: 'json'
+    })
+		.done(function (data) {
+		    $('#R2').removeClass("alert-danger");
+		    $("#R2").html("Rule Updated").addClass("alert alert-success").show();
+		    $("#rule1").attr("disabled", true);
+		    console.log("data.data.id");
+
 		})
 		.error(function (msg) {
 		    $('#R2').removeClass("alert-success");
@@ -84,10 +135,10 @@ function createresolutionrule3() {
 
     var jsonObj = {
         //workflow ID needs to passed on from the previous panel
-        "workflowId": 3,
-        "associatedId": 10,
-        "type": "submitter",
-        "percentage": "50"
+        "workflowId": $("tr:eq( 3 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 3 ) td:eq( 1 ) input").val(),
+        "type": $("tr:eq( 3 ) td:eq( 2 )").html(),
+        "percentage": $("tr:eq( 3 ) td:eq( 3 ) input").val()
     }
 
     $.ajax({
@@ -99,7 +150,9 @@ function createresolutionrule3() {
     })
 		.done(function (data) {
 		    $('#R3').removeClass("alert-danger");
-		    $("#R3").html("Rule Created").addClass("alert alert-success").show()
+		    $("#R3").html("Rule Created").addClass("alert alert-success").show();
+		    $("#rule3").attr("disabled", true);
+		    id3 = data.data.id;
 		})
 		.error(function (msg) {
 		    $('#R3').removeClass("alert-success");
@@ -109,23 +162,59 @@ function createresolutionrule3() {
 
 }
 
-var j = 0;
+function updateresolutionrule3() {
+
+    var jsonObj = {
+        //workflow ID needs to passed on from the previous panel
+        "id": id3,
+        "workflowId": $("tr:eq( 3 ) td:eq( 0 ) input").val(),
+        "associatedId": $("tr:eq( 3 ) td:eq( 1 ) input").val(),
+        "type": $("tr:eq( 3 ) td:eq( 2 )").html(),
+        "percentage": $("tr:eq( 3 ) td:eq( 3 ) input").val()
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: "http://localhost:8080/viewpoint-services/v1/community/resolution/rules/" + id3,
+        contentType: "application/json",
+        data: JSON.stringify(jsonObj),
+        dataType: 'json'
+    })
+		.done(function (data) {
+		    $('#R3').removeClass("alert-danger");
+		    $("#R3").html("Rule Updated").addClass("alert alert-success").show();
+		    $("#rule1").attr("disabled", true);
+		    console.log(data.data.id);
+
+		})
+		.error(function (msg) {
+		    $('#R3').removeClass("alert-success");
+		    $("#R3").html(msg.responseText).addClass("alert alert-danger").show();
+		});
+
+
+}
+
+
+
+
 function getworkflowforsubmitter() {
-    for (var i = 0; i < 12;i++) {
+    var j = 0;
+    for (var i = 0; i < $('#fre').val();i++) {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/viewpoint-services/v1/community/resolution?template=" + "55" + "&submitter=" + "10",
+            url: "http://localhost:8080/viewpoint-services/v1/community/resolution?template=" + $('#temp').val() + "&submitter=" + $('#sub').val(),
             dataType: 'json',
             async: false
         })
 		.done(function (data) {
 		    $('#Wid').removeClass("alert-danger");
-		    if (data.data.id == 3) {
+		    if (data.data.id >0) {
 		        j = j + 1;
 		        console.log(data.data.id);
 		    }else
 		    console.log("Nothing executed");
-		    $("#Wid").html("Workflow to be executed " + data.data.id + " Was executed "+ j + " Times when a template is submitted 100 Times" ).addClass("alert alert-success").show();
+		    $("#Wid").html("Workflow to be executed " + data.data.id + " Was executed " + j + " Times when a template is submitted " + $('#fre').val() + " Times").addClass("alert alert-success").show();
 		})
 		.error(function (msg) {
 		    $('#Wid').removeClass("alert-success");
@@ -136,79 +225,10 @@ function getworkflowforsubmitter() {
   
 }
 
-function associatetemplate() {
 
-    var jsonObj = {
-        //workflow ID needs to passed on from the previous panel
-        workflowId: $("#workflowid").val(),
-        associatedId: $("#templateid").val(),
-        type: "template"
-    }
 
-    $.ajax({
-        type: "POST",
-        url: viewpointWorkflowRuleURL ,
-        contentType: "application/json",
-        data: JSON.stringify(jsonObj),
-        //error: function (data) { alert("ajax error"); },
-        dataType: 'json'
-    })
-		.done(function (data) {
-		    $('#associationStatus').removeClass("alert-danger");
-		    $("#associationStatus").html("Template Asscoiated!!").addClass("alert alert-success").show()
-		})
-		.error(function (msg) {
-		    $('#associationStatus').removeClass("alert-success");
-		    $("#associationStatus").html(msg.responseText).addClass("alert alert-danger").show();
-		});
-}
 
-function updateWorkflow() {
 
-    var jsonObj = {
-        id : $("#workflowid2").val(),
-        workflowId: $("#workflowid2").val(),
-        associatedId: $("#associatingid").val(),
-        type: "template"
-    }
 
-    $.ajax({
-        type: "PUT",
-        url: viewpointWorkflowRuleURL + "/" + $("#workflowid2").val(),
-        contentType: "application/json",
-        data: JSON.stringify(jsonObj),
-        //error: function (data) { alert("ajax error"); },
-        dataType: 'json'
-    })
-		.done(function (data) {
-		    $('#updateworkflowStatus').removeClass("alert-danger");
-		    $("#updateworkflowStatus").html("Updated!!").addClass("alert alert-success").show()
-		})
-		.error(function (msg) {
-		    $('#updateworkflowStatus').removeClass("alert-success");
-		    $("#updateworkflowStatus").html(msg.responseText).addClass("alert alert-danger").show();
-		});
-}
-
-function deleteWorkflow(id) {
-    if (id === "") {
-    id = $("workflowid3").val();
-    }
-
-    $.ajax({
-        type: "DELETE",
-        url: viewpointWorkflowRuleURL + "/" + $("#workflowid3").val(),
-        crossDomain: true,
-        dataType: "text"
-    })
-		.done(function (data) {
-		    $('#P6').removeClass("alert-danger");
-		    $("#P6").html(data).addClass("alert alert-success").show();
-		})
-		.error(function (msg) {
-		    $('#P6').removeClass("alert-success");
-		    $("#P6").html(msg.responseText).addClass("alert alert-danger").show();
-		});
-}
 
 

@@ -31,18 +31,27 @@
   <div class="panel-body">
     <table class="table table-bordered">
         <tr>
-            <th>Workflow</th><th>Submitter ID</th><th>Type</th><th>Percentage %</th><th>statues</th>
+            <th>Workflow</th><th>Associated ID</th><th>Type</th><th>Percentage %</th><th>statues</th><th></th><th></th>
         </tr>
         <tr class="success">
-            <td >1</td><td >10</td><td >Submitter</td><td >40</td><td><p id="R1" class="container"></p></td><td><button type="button" id="rule1"class="btn btn-default navbar-btn" onclick="createresolutionrule1()"style="float: right; bottom: 0;">Create</button></td>
+            <td ><input type="text" value="1"/></td><td ><input type="text" value="10"/></td><td >Submitter</td><td ><input type="text" value="40"/></td><td><p id="R1" class="container"></p></td>
+            <td><button type="button" id="rule1"class="btn btn-default navbar-btn" onclick="createresolutionrule1()"style="float: right; bottom: 0;">Create</button></td>
+            <td><button type="button" id="update1"class="btn btn-default navbar-btn" onclick="updateresolutionrule1()"style="float: right; bottom: 0;">Update</button></td>
         </tr>
         <tr class="warning">
-            <td>2</td><td>55</td><td>Template</td><td>40%</td><td><p id="R2" class="container"></td><td><button type="button" id="rule2"class="btn btn-default navbar-btn" onclick="createresolutionrule2()"style="float: right; bottom: 0;">Create</button></td>
+            <td><input type="text" value="2"/></td><td><input type="text" value="55"/></td><td>Template</td><td><input type="text" value="40"/></td><td><p id="R2" class="container"></td>
+            <td><button type="button" id="rule2"class="btn btn-default navbar-btn" onclick="createresolutionrule2()"style="float: right; bottom: 0;">Create</button></td>
+             <td><button type="button" id="update2"class="btn btn-default navbar-btn" onclick="updateresolutionrule2()"style="float: right; bottom: 0;">Update</button></td>
         </tr>
         <tr class="success">
-            <td>3</td><td>10</td><td>Submitter</td><td>50%</td><td><p id="R3" class="container"></td><td><button type="button" id="rule3"class="btn btn-default navbar-btn" onclick="createresolutionrule3()"style="float: right; bottom: 0;">Create</button></td>
+            <td><input type="text" value="3"/></td><td><input type="text" value="10"/></td><td>Submitter</td><td><input type="text" value="50"/></td><td><p id="R3" class="container"></td>
+            <td><button type="button" id="rule3"class="btn btn-default navbar-btn" onclick="createresolutionrule3()"style="float: right; bottom: 0;">Create</button></td>
+             <td><button type="button" id="update3"class="btn btn-default navbar-btn" onclick="updateresolutionrule3()"style="float: right; bottom: 0;">Update</button></td>
         </tr>
     </table>
+    <p>Template Id :<input type="text" id="temp" value="10"/> 
+    <p>Submitter Id : <input type="text" id="sub" value="10"/> 
+    <p>Initiate the workflow <input type="text" id="fre" value="10"/> Times.
     <button type="button" id="craeteworkflow"class="btn btn-default navbar-btn" onclick="getworkflowforsubmitter()" style="float: right; bottom: 0;">Get workflow</button>
     <div id="Wid"></div>
     <div id="statues"></div>
