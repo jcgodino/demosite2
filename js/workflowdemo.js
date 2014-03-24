@@ -196,10 +196,9 @@ function updateresolutionrule3() {
 }
 
 
-
-
 function getworkflowforsubmitter() {
     var j = 0;
+    var workid;
     for (var i = 0; i < $('#fre').val();i++) {
         $.ajax({
             type: "GET",
@@ -209,12 +208,13 @@ function getworkflowforsubmitter() {
         })
 		.done(function (data) {
 		    $('#Wid').removeClass("alert-danger");
-		    if (data.data.id >0) {
+		    if (data.data.id > 0) {
 		        j = j + 1;
+		        workid = data.data.id;
 		        console.log(data.data.id);
-		    }else
-		    console.log("Nothing executed");
-		    $("#Wid").html("Workflow to be executed " + data.data.id + " Was executed " + j + " Times when a template is submitted " + $('#fre').val() + " Times").addClass("alert alert-success").show();
+		    } else
+		        console.log("Nothing executed");
+		    $("#Wid").html("Workflow to be executed " + workid + " Was executed " + j + " Times when a template is submitted " + $('#fre').val() + " Times").addClass("alert alert-success").show();
 		})
 		.error(function (msg) {
 		    $('#Wid').removeClass("alert-success");
