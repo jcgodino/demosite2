@@ -145,7 +145,7 @@ function listunifiedtask() {
 
 
 }
-
+var externalid;
 
 function gettaskdetails(uriToGetTaskDetails) {
     $.ajax({
@@ -156,18 +156,104 @@ function gettaskdetails(uriToGetTaskDetails) {
 
     })
 		.done(function (dataCommingFromServer) {
+		    $("#taskdetails").empty();
 		    $('#taskdetails').removeClass("alert-danger");
-		    $.each($.parseJSON(dataCommingFromServer), function (k, v) {
-		        $("#taskdetails").append(k + ' : ' + v + "<br>");
+		    $.each(dataCommingFromServer.data, function (k, v) {
+                if (k=="template")
+                {
+                $.each(this, function (D, v) {
+		        $("#taskdetails").append("Template "+D + ' : ' + v + "<br>");
+		        });
+                }
+                    else if (k=="history")
+                {
+                 $.each(this[0], function (E, v) {
+		        $("#taskdetails").append("History "+ E + ' : ' + v + "<br>");
+		        });
+                }
+		        else
+                $("#taskdetails").append(k + ' : ' + v + "<br>");
 		    });
-           
 		    $('#taskid2').html(dataCommingFromServer.data.id);
 		    $('#taskname1').html(dataCommingFromServer.data.externalId);
 		    $('#userdiv').html("Created By:" + dataCommingFromServer.data.createdBy);
+		    externalid = dataCommingFromServer.data.externalId;
 		})
 		.error(function (msg) {
 		    $('#taskdetails').removeClass("alert-success");
 		    $('#taskdetails').html(msg.responseText).addClass("alert alert-danger").show();
 		    //alert(msg.responseText)
 		})
+}
+
+function createworkflow2() {
+
+    var d = new Date();
+    var Url = "/viewpoint-services/v1/EngageOne/workflow/definitions";
+    var jsonObj = {
+        name: "Sample workflow with one steps" + ('0' + d.getMinutes()).slice(-2),
+        description: "Description of sample workflow with one steps" + ('0' + d.getMinutes()).slice(-2),
+        availableForUse: true,
+        steps: [
+                              {
+                                  type: "review" ,
+                                  name: "sample step 1" ,
+                                  description: null,
+                                  reviewers: ["user4"],
+                                  approvalMode: "ANYONE" ,
+                                  groupApprovalMode: "ANYONE"
+                              }
+               ]
+
+                          }
+
+          $.ajax({
+                 type: "POST",
+                 url: Url,
+                 contentType: "application/json",
+                 data: JSON.stringify(jsonObj),
+                 dataType: 'json'
+             })
+
+		.done(function (data) {
+
+		    initiateworkflow(data.data.id);
+            $('#workflowlog').html(data.data.id);
+
+
+		})
+		.error(function (msg) {
+		    alert(JSON.stringify(msg));
+		    console.log("something went wrong");
+		    console.log(msg);
+            $('#workflowlog').html(msg);
+		});
+
+}
+
+function initiateworkflow(id) {
+
+       var jsonObj = {  
+                "submitterId":"user1",
+                "externalReferenceId": externalid,
+                }
+
+    $.ajax({
+        type: "POST",
+        url: "/viewpoint-services/v1/EngageOne/workflow/definitions/" +id,
+        contentType: "application/json",
+        data: JSON.stringify(jsonObj),
+        dataType: 'json'
+    })
+		.done(function (data) {
+		    $('#taskid2').html(dataCommingFromServer.data.id);
+            
+		})
+		.error(function (msg) {
+		    console.log("something went wrong");
+		    console.log(msg);
+		});
+
+            
+
 }
