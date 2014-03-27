@@ -171,6 +171,12 @@ function gettaskdetails(uriToGetTaskDetails) {
 		        $("#taskdetails").append("History "+ E + ' : ' + v + "<br>");
 		        });
                 }
+                      else if (k=="comments")
+                {
+                 
+		        $("#taskdetails").append("Comments "+ this[0].comments + "<br>");
+		        
+                }
 		        else
                 $("#taskdetails").append(k + ' : ' + v + "<br>");
 		    });
