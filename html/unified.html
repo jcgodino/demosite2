@@ -21,16 +21,17 @@
     <script type="text/javascript" src="../js/spin.min.js"/>
 </head>
 <div>
-    <button type="button" id="debugShowEOTaskPanel" class="btn btn-default navbar-btn" data-toggle="modal"
-            data-target="#interactiveTaskDetails">debugShowEOTaskPanel
-    </button>
-
-    <button type="button" id="debugShowWFTaskPanel" class="btn btn-default navbar-btn" data-toggle="modal"
-            data-target="#reviewTaskDetails">debugShowWFTaskPanel
-    </button>
     <button type="button" id="list" class="btn btn-default navbar-btn" onclick="listunifiedtask()">
         List Task
     </button>
+    <button type="button" id="debugShowEOTaskPanel" class="btn btn-default navbar-btn" data-toggle="modal"
+            data-target="#interactiveTaskDetails" style="visibility: hidden">debugShowEOTaskPanel
+    </button>
+
+    <button type="button" id="debugShowWFTaskPanel" class="btn btn-default navbar-btn" data-toggle="modal"
+            data-target="#reviewTaskDetails" style="visibility: hidden">debugShowWFTaskPanel
+    </button>
+
 
 </div>
 
@@ -38,7 +39,6 @@
 </div>
 
 <script>
-    window.onload(listunifiedtask());
     var opts = {
         lines: 13, // The number of lines to draw
         length: 20, // The length of each line
@@ -76,6 +76,7 @@
         unifiedTaskListSortfield = "&sortField=ASSIGNEE";
         $("#chosenSortField").html("Assignee");
     });
+    window.onload(listunifiedtask());
 </script>
 <script type="text/css">
     .modalDialog {
@@ -232,8 +233,12 @@
             </div>
             <div class="modal-footer" style="clear: both">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button id="btnApprove" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">Approve</button>
-                <button id="btnReject" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">Reject</button>
+                <button id="btnApprove" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">
+                    Approve
+                </button>
+                <button id="btnReject" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">
+                    Reject
+                </button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -244,7 +249,8 @@
 
 
 <!-- Modal -->
-<div class="modal" id="reviewTaskDetailsComments" tabindex="-1" role="dialog" aria-labelledby="reviewTaskDetailsCommentsLabel" aria-hidden="true">
+<div class="modal" id="reviewTaskDetailsComments" tabindex="-1" role="dialog" aria-labelledby="reviewTaskDetailsCommentsLabel"
+     aria-hidden="true">
     <div class="modal-dialog" style="width: 800px">
         <div class="modal-content">
             <div class="modal-header">
