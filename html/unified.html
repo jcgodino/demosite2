@@ -28,12 +28,17 @@
     <button type="button" id="debugShowWFTaskPanel" class="btn btn-default navbar-btn" data-toggle="modal"
             data-target="#reviewTaskDetails">debugShowWFTaskPanel
     </button>
+    <button type="button" id="list" class="btn btn-default navbar-btn" onclick="listunifiedtask()">
+        List Task
+    </button>
+
 </div>
 
 <div id="foo" style="margin-left: 100px; margin-top: 60px; float: left; visibility: hidden">
 </div>
 
 <script>
+    window.onload(listunifiedtask());
     var opts = {
         lines: 13, // The number of lines to draw
         length: 20, // The length of each line
@@ -54,6 +59,23 @@
     };
     var target = document.getElementById('foo');
     var spinner = new Spinner(opts).spin(target);
+
+    $('#unifiedListSortOptionsTaskName').click(function (e) {
+        unifiedTaskListSortfield = "&sortField=TASKNAME";
+        $("#chosenSortField").html("Task Name");
+    });
+    $('#unifiedListSortOptionsStatus').click(function (e) {
+        unifiedTaskListSortfield = "&sortField=STATUS";
+        $("#chosenSortField").html("Status");
+    });
+    $('#unifiedListSortOptionsActivity').click(function (e) {
+        unifiedTaskListSortfield = "&sortField=LASTMODIFIED";
+        $("#chosenSortField").html("Activity");
+    });
+    $('#unifiedListSortOptionsAssignee').click(function (e) {
+        unifiedTaskListSortfield = "&sortField=ASSIGNEE";
+        $("#chosenSortField").html("Assignee");
+    });
 </script>
 <script type="text/css">
     .modalDialog {
@@ -63,18 +85,20 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0, 0, 0, 0.8);
         z-index: 99999;
-        opacity:0;
+        opacity: 0;
         -webkit-transition: opacity 400ms ease-in;
         -moz-transition: opacity 400ms ease-in;
         transition: opacity 400ms ease-in;
         pointer-events: none;
     }
+
     .modalDialog:target {
-        opacity:1;
+        opacity: 1;
         pointer-events: auto;
     }
+
     .modalDialog > div {
         width: 400px;
         position: relative;
@@ -92,7 +116,7 @@
         <div class="panel panel-default ">
             <div class="panel-heading">
                 <div class="dropdown">
-                    Sort <a data-toggle="dropdown" href="#">Task Name</a>
+                    Sort <a id="chosenSortField" data-toggle="dropdown" href="#">Task Name</a>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="unifiedListSortOptionsTaskName">Task
                             Name</a></li>
@@ -115,9 +139,7 @@
                                style="float: left"/>
 
                     </div>
-                    <button type="button" id="list" class="btn btn-default navbar-btn" onclick="listunifiedtask()"
-                            style="float: right; bottom: 0;">List Task
-                    </button>
+
 
                 </div>
             </div>
@@ -134,20 +156,37 @@
 <!-- Modal -->
 <div class="modal" id="interactiveTaskDetails" tabindex="-1" role="dialog" aria-labelledby="interactiveTaskDetailsLabel"
      aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: 800px">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="interactiveTaskDetailsLabel">Interactive Task</h4>
+                <h4 class="modal-title" id="interactiveTaskDetailsLabel">Interactive Task - <span id="eoTaskName"></span></h4>
             </div>
-            <div class="modal-body">
-                <div style="float: left">
-                <p>This is a sample modal box that can be created using the powers of CSS3.</p>
-                    </div>
+            <div class="modal-body" style="clear: both">
+                <div style="height: 500px; width: 430px; float: left; border: thin; border-style: solid; border-radius: 10px">
+                    <p id="eoTaskComments" style="">Comments to go here</p>
+                </div>
+                <div style="height: 500px; width: 295px; float: left; margin-left: 5px">
+                    <h3 style="margin-top: 0px">Details</h3>
 
-                <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+                    <div style="margin-top: 5px">
+                        Last Activity: <span id="eoLastActivity">
+                        <i>date to go here</i>
+                        </span>
+                    </div>
+                    <div style="margin-top: 5px">
+                        <b><span id="eoTemplateName"><i>template name here</i></span></b>
+                        template from folder <span id="eoTemplatePath">
+                        <i>folder here</i>
+                        </span>
+                    </div>
+                    <div style="margin-top: 5px"><b>Assigned</b></div>
+                    <div id="eoAssignee"><i>assignee here</i></div>
+                    <div style="margin-top: 5px"><b>Status</b></div>
+                    <div id="eoStatus"><i>status here</i></div>
+                </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="clear: both">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -159,21 +198,66 @@
 
 <!-- Modal -->
 <div class="modal" id="reviewTaskDetails" tabindex="-1" role="dialog" aria-labelledby="reviewTaskDetailsLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: 800px">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="reviewTaskDetailsLabel">Review Task</h4>
+                <h4 class="modal-title" id="reviewTaskDetailsLabel">Review Task - <span id="wfTaskName"></span></h4>
             </div>
             <div class="modal-body">
-                <div class="input-group">
-                    <span class="input-group-addon">name</span>
-                    <input id="saveSearchName" type="text" class="form-control"/>
+                <div style="height: 500px; width: 430px; float: left">
+                    <textarea id="wfCommentInput" autofocus="autofocus" cols="30" rows="10"
+                              style="width: 430px; height: 500px"></textarea>
+                </div>
+                <div style="height: 500px; width: 295px; float: left; margin-left: 5px">
+                    <h3 style="margin-top: 0px">Details</h3>
+
+                    <div><b><i id="detailsTaskName">Task name</i></b></div>
+                    <div style="margin-top: 5px">
+                        <b><span id="wfTemplateName"><i>template name here</i></span></b>
+                        template from folder <span id="wfTemplatePath">
+                        <i>folder here</i>
+                        </span>
+                    </div>
+                    <div style="margin-top: 5px">
+                        Submitted by: <span id="eoSubmittedBy"></span>
+                        at <i><span id="wfSubmittedDate">date to go here</span></i>
+                        </span>
+                    </div>
+                    <div style="margin-top: 5px"><b>Assigned</b></div>
+                    <div id="wfAssignee"><i>assignee here</i></div>
+                    <div style="margin-top: 50px"><a href="#" onclick="showReviewComments()">View comments</a></div>
+
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="clear: both">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSearch()">Save</button>
+                <button id="btnApprove" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">Approve</button>
+                <button id="btnReject" type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveComment(this.id)">Reject</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!-- Modal -->
+<div class="modal" id="reviewTaskDetailsComments" tabindex="-1" role="dialog" aria-labelledby="reviewTaskDetailsCommentsLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="reviewTaskDetailsCommentsLabel">Review Comments</h4>
+            </div>
+            <div class="modal-body">
+                <div style="height: 500px; width: 700px">
+                    <p id="wkTaskComments" style="">Comments to go here</p>
+                </div>
+            </div>
+            <div class="modal-footer" style="clear: both">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
         <!-- /.modal-content -->
