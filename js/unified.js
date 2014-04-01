@@ -1,5 +1,5 @@
 ﻿var id1;
-var unifiedTaskListSortfield = "&sortField=TASKNAME"
+var unifiedTaskListSortfield = "&sortField=TASKNAME";
 var currentReviewTaskInteractiveID = "";
 var reviewCommentsText = "";
 var page = "1";
@@ -7,8 +7,26 @@ var pageParam = "&page=";
 var pageSize = "10";
 var pageSizeParam = "&size=";
 
+function createTaskListPagination(totalRecords) {
+	pages = totalRecords / 10;
+
+	$('#taskListPaginationNavi').empty();
+	for (var i = 1; (i < 11) && (i < pages); i++) {
+
+		$('#taskListPaginationNavi').append('<li><a href="#" id="' + i + '">' + i + '</a></li>');
+
+//		$('#' + i).click(function () {
+//			range = "?page=" + this.id + "&size=" + pageSize;
+//			myFunctionSearch();
+//		})
+	}
+
+	//createThePagination = false;
+	//$('#PaginationNavi').append('<li><a href="#">&raquo;</a></li>');
+}
+
 function buildPaginationParams() {
-	return pageParam + pageSize + pageSizeParam + pageSize;
+	return pageParam + page + pageSizeParam + pageSize;
 }
 
 function getTaskName(task) {
@@ -20,16 +38,16 @@ function getTaskName(task) {
 	return taskName;
 }
 
-function searchForTask() {
-	searchString = $('#searchForTaskQuery').val();
+function getTaskList(url) {
 	$.ajax({
 		type: "GET",
 		//url: "http://uksearchdev:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1",
-		url: "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1&taskName=" + $('#searchForTaskQuery').val() + unifiedTaskListSortfield + buildPaginationParams(),
+		url: url,
 		contentType: "application/json",
 		dataType: 'json'
 	})
 		.done(function (foo) {
+			$('#tasklist').removeClass("alert-danger");
 			$('#tasklist').html(foo).addClass("alert alert-success").show();
 			console.log(foo);
 			console.log(foo.data);
@@ -41,47 +59,25 @@ function searchForTask() {
 			$(".list-group-item").click(function (event) {
 				getTaskDetails(event.target.id);
 			});
-
+			createTaskListPagination(foo.data.metadata.totalRecords);
 		})
 		.error(function (msg) {
 			$('#tasklist').removeClass("alert-success");
 			$("#tasklist").html(msg.responseText).addClass("alert alert-danger").show();
 			console.log("something went wrong");
 			console.log(msg);
+			$('#taskListPaginationNavi').empty();
 		});
 }
 
+function searchForTask() {
+	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1&taskName=" + $('#searchForTaskQuery').val() + unifiedTaskListSortfield + buildPaginationParams();
+	getTaskList(url);
+}
+
 function listUnifiedTask() {
-
-	$.ajax({
-		type: "GET",
-		//url: "http://uksearchdev:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1",
-		url: "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1" + unifiedTaskListSortfield + buildPaginationParams(),
-		contentType: "application/json",
-		dataType: 'json'
-	})
-		.done(function (foo) {
-			$('#tasklist').html(foo).addClass("alert alert-success").show();
-			console.log(foo);
-			console.log(foo.data);
-			var type;
-			$.each(foo.data.tasks, function (i, task) {
-				$('#tasklist').append('<li><a href="#" id="' + task.uriToGetTaskDetails + '" class="list-group-item"><span>Task Description : </span>' + getTaskName(task) + '<br> Type :<i>' + task.type + '</i></a></li>');
-			});
-
-			$(".list-group-item").click(function (event) {
-				getTaskDetails(event.target.id);
-			});
-
-		})
-		.error(function (msg) {
-			$('#tasklist').removeClass("alert-success");
-			$("#tasklist").html(msg.responseText).addClass("alert alert-danger").show();
-			console.log("something went wrong");
-			console.log(msg);
-		});
-
-
+	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1" + unifiedTaskListSortfield + buildPaginationParams();
+	getTaskList(url);
 }
 
 function getTaskDetails(uriToGetTaskDetails) {
