@@ -25,6 +25,42 @@ function createTaskListPagination(totalRecords) {
 	//$('#PaginationNavi').append('<li><a href="#">&raquo;</a></li>');
 }
 
+function setUpMenuEventHandlers(){
+	$('#unifiedListSortOptionsTaskName').click(function (e) {
+		unifiedTaskListSortfield = "&sortField=TASKNAME";
+		$("#chosenSortField").html("Task Name");
+	});
+	$('#unifiedListSortOptionsStatus').click(function (e) {
+		unifiedTaskListSortfield = "&sortField=STATUS";
+		$("#chosenSortField").html("Status");
+	});
+	$('#unifiedListSortOptionsActivity').click(function (e) {
+		unifiedTaskListSortfield = "&sortField=LASTMODIFIED";
+		$("#chosenSortField").html("Activity");
+	});
+	$('#unifiedListSortOptionsAssignee').click(function (e) {
+		unifiedTaskListSortfield = "&sortField=ASSIGNEE";
+		$("#chosenSortField").html("Assignee");
+	});
+
+	$('#10Items').click(function (e) {
+		pageSize = "10";
+		$("#numOfTaskItemsToShow").html("10 Items");
+	});
+	$('#20Items').click(function (e) {
+		pageSize = "20";
+		$("#numOfTaskItemsToShow").html("20 Items");
+	});
+	$('#30Items').click(function (e) {
+		pageSize = "30";
+		$("#numOfTaskItemsToShow").html("30 Items");
+	});
+	$('#40Items').click(function (e) {
+		pageSize = "40";
+		$("#numOfTaskItemsToShow").html("40 Items");
+	});
+}
+
 function buildPaginationParams() {
 	return pageParam + page + pageSizeParam + pageSize;
 }
@@ -101,6 +137,30 @@ function getTaskDetails(uriToGetTaskDetails) {
 		})
 }
 
+function getCommentStatus(comment){
+	if (comment.status === "approved") {
+		return "<b>Approved by</b> "
+	}
+	else {
+		return "<b>Rejected by</b> "
+	}
+}
+
+function getComment(comment){
+	var commentText = '';
+	commentText += getCommentStatus(comment);
+	commentText += comment.user.first;
+	commentText += ' ';
+	commentText += comment.user.last;
+	commentText += ' at ';
+	commentText += comment.timestamp;
+	commentText += '<br>';
+	commentText += comment.comment;
+	commentText += '<br>';
+	commentText += '<br>';
+	return commentText;
+}
+
 function showInteractiveTask(InteractiveTask) {
 	$('#interactiveTaskDetails').modal('show');
 	$('#eoTemplateName').html(InteractiveTask.data.template.name);
@@ -109,27 +169,12 @@ function showInteractiveTask(InteractiveTask) {
 	$('#eoTaskName').html(InteractiveTask.data.externalId);
 	$('#eoAssignee').html(InteractiveTask.data.createdBy);
 	$('#eoStatus').html(InteractiveTask.data.status);
+
 	$.each(InteractiveTask.data, function (k, v) {
 		if (k === "comments") {
 			$('#eoTaskComments').html("");
 			$.each(InteractiveTask.data.comments, function (i, comment) {
-				var commentText = '<br>';
-				if (comment.status === "approved") {
-					commentText = "<b>Approved by</b> "
-				}
-				else {
-					commentText = "<b>Rejected by</b> "
-				}
-				commentText += comment.user.first;
-				commentText += ' ';
-				commentText += comment.user.last;
-				commentText += ' at ';
-				commentText += comment.timestamp;
-				commentText += '<br>';
-				commentText += comment.comment;
-				commentText += '<br>';
-				commentText += '<br>';
-				$('#eoTaskComments').append(commentText);
+				$('#eoTaskComments').append(getComment(comment));
 			})
 		}
 	});
@@ -146,26 +191,12 @@ function showReviewTask(ReviewTask) {
 	$('#wfSubmittedDate').html(ReviewTask.data.submittedDate);
 	$('#wfAssignee').html(ReviewTask.data.assignedTo);
 	currentReviewTaskInteractiveID = ReviewTask.data.externalReferenceId;
-	reviewCommentsText = '<br>';
+	reviewCommentsText = '';
 	$.each(ReviewTask.data, function (k, v) {
 		if (k === "comments") {
 			$('#eoTaskComments').html("");
 			$.each(ReviewTask.data.comments, function (i, comment) {
-				if (reviewCommentsText.status === "approved") {
-					reviewCommentsText += "<b>Approved by</b> "
-				}
-				else {
-					reviewCommentsText += "<b>Rejected by</b> "
-				}
-				reviewCommentsText += comment.user.first;
-				reviewCommentsText += ' ';
-				reviewCommentsText += comment.user.last;
-				reviewCommentsText += ' at ';
-				reviewCommentsText += comment.timestamp;
-				reviewCommentsText += '<br>';
-				reviewCommentsText += comment.comment;
-				reviewCommentsText += '<br>';
-				reviewCommentsText += '<br>';
+				reviewCommentsText += getComment(comment);
 			})
 		}
 	});
