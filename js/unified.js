@@ -6,26 +6,29 @@ var page = "1";
 var pageParam = "&page=";
 var pageSize = "10";
 var pageSizeParam = "&size=";
+var searching = false;
 
 function createTaskListPagination(totalRecords) {
-	pages = totalRecords / 10;
+	var pages = totalRecords / pageSize;
 
 	$('#taskListPaginationNavi').empty();
 	for (var i = 1; (i < 11) && (i < pages); i++) {
 
 		$('#taskListPaginationNavi').append('<li><a href="#" id="' + i + '">' + i + '</a></li>');
 
-//		$('#' + i).click(function () {
-//			range = "?page=" + this.id + "&size=" + pageSize;
-//			myFunctionSearch();
-//		})
+		$('#' + i).click(function () {
+			page = this.id;
+			if (searching) {
+				searchForTask();
+			}
+			else {
+				listUnifiedTask();
+			}
+		})
 	}
-
-	//createThePagination = false;
-	//$('#PaginationNavi').append('<li><a href="#">&raquo;</a></li>');
 }
 
-function setUpMenuEventHandlers(){
+function setUpMenuEventHandlers() {
 	$('#unifiedListSortOptionsTaskName').click(function (e) {
 		unifiedTaskListSortfield = "&sortField=TASKNAME";
 		$("#chosenSortField").html("Task Name");
@@ -77,7 +80,6 @@ function getTaskName(task) {
 function getTaskList(url) {
 	$.ajax({
 		type: "GET",
-		//url: "http://uksearchdev:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1",
 		url: url,
 		contentType: "application/json",
 		dataType: 'json'
@@ -96,6 +98,7 @@ function getTaskList(url) {
 				getTaskDetails(event.target.id);
 			});
 			createTaskListPagination(foo.data.metadata.totalRecords);
+			//createTaskListPagination(105);
 		})
 		.error(function (msg) {
 			$('#tasklist').removeClass("alert-success");
@@ -108,11 +111,13 @@ function getTaskList(url) {
 
 function searchForTask() {
 	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1&taskName=" + $('#searchForTaskQuery').val() + unifiedTaskListSortfield + buildPaginationParams();
+	searching = true;
 	getTaskList(url);
 }
 
 function listUnifiedTask() {
 	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1" + unifiedTaskListSortfield + buildPaginationParams();
+	searching = false;
 	getTaskList(url);
 }
 
@@ -137,7 +142,7 @@ function getTaskDetails(uriToGetTaskDetails) {
 		})
 }
 
-function getCommentStatus(comment){
+function getCommentStatus(comment) {
 	if (comment.status === "approved") {
 		return "<b>Approved by</b> "
 	}
@@ -146,7 +151,7 @@ function getCommentStatus(comment){
 	}
 }
 
-function getComment(comment){
+function getComment(comment) {
 	var commentText = '';
 	commentText += getCommentStatus(comment);
 	commentText += comment.user.first;
