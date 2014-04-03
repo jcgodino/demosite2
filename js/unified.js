@@ -28,6 +28,8 @@ function createTaskListPagination(totalRecords) {
 	}
 }
 
+
+
 function setUpMenuEventHandlers() {
 	$('#unifiedListSortOptionsTaskName').click(function (e) {
 		unifiedTaskListSortfield = "&sortField=TASKNAME";
