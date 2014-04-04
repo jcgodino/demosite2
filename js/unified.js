@@ -112,13 +112,13 @@ function getTaskList(url) {
 }
 
 function searchForTask() {
-	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1&taskName=" + $('#searchForTaskQuery').val() + unifiedTaskListSortfield + buildPaginationParams();
+	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?user=user1&taskName=" + $('#searchForTaskQuery').val() + unifiedTaskListSortfield + buildPaginationParams();
 	searching = true;
 	getTaskList(url);
 }
 
 function listUnifiedTask() {
-	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?userId=user1" + unifiedTaskListSortfield + buildPaginationParams();
+	var url = "http://localhost:8080/viewpoint-services/v1/EngageOne/unified/tasks?user=user1" + unifiedTaskListSortfield + buildPaginationParams();
 	searching = false;
 	getTaskList(url);
 }
