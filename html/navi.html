@@ -19,17 +19,19 @@
     <script type="text/javascript" src="../js/workflowdemo.js"></script>
     <script type="text/javascript" src="../js/comments.js"></script>
     <script type="text/javascript" src="../js/unified.js"></script>
+    <script type="text/javascript" src="../js/ldapsync.js"></script>
 </head>
 <body>
 <div style="margin-top:20px">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#workflowdemo" data-toggle="tab">Workflow Rest Api Demo</a></li>
-        <li><a href="#comments" data-toggle="tab">Comments Api Demo</a></li>
+        <li><a href="#ldapsync" data-toggle="tab">Ldap SYNC Demo</a></li>
+        <!--<li><a href="#comments" data-toggle="tab">Comments Api Demo</a></li>
         <li><a id="search" href="#searchdemo" data-toggle="tab">Search</a></li>
         <li><a id="unifiedTaskList" href="#unified" data-toggle="tab">Unfied Task List</a></li>
          <li><a href="#savesearchdemo" data-toggle="tab">Save Search</a></li>
         <li><a href="#seachsavesearchdemo" data-toggle="tab">Retrieve Saved Searches</a></li>
-        <li><a href="#notificationtemplates" data-toggle="tab">Notification Templates</a></li>
+        <li><a href="#notificationtemplates" data-toggle="tab">Notification Templates</a></li>-->
        <li><a href="#notificationtemplatesusingknockjs" data-toggle="tab">Notification Templates using Knockout js</a></li>
     </ul>
     <!-- Tab panes -->
@@ -41,6 +43,15 @@
                     $("#workflowdemo").load("workflowdemo.html");
                 </script>
             </div>
+        </div>
+
+           <div class="tab-pane fade" id="ldapsync">
+            <div id="ldapsync1">
+                <script>
+                    $("#ldapsync").load("temp.html");
+                </script>
+            </div>
+
         </div>
 
         <div class="tab-pane fade" id="comments">
@@ -60,14 +71,14 @@
 
         </div>
        
-        <div class="tab-pane fade" id="searchdemo">
+        <!--<div class="tab-pane fade" id="searchdemo">
             <div id="searchdemo1">
                 <script>
                     $("#searchdemo1").load("searchdemo.html", setupNoOfAssetsToShow());
                 </script>
             </div>
 
-        </div>
+        </div>-->
         <div class="tab-pane fade" id="savesearchdemo">
             <div id="savesearchdemo1">
                 <p style="font-size: 22px">save search demo</p>

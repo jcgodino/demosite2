@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Principal search</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="../js/ldapsync.js"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="../js/globals.js"></script>
+
+    <style>
+        .ui-autocomplete-loading {
+            background: white url('ui-anim_basic_16x16.gif') right center no-repeat;
+        }
+
+        #city {
+            width: 25em;
+        }
+    </style>
+    <script>
+        $(function () {
+            function log( message ) {
+                $( "<div>" ).text( message ).prependTo( "#log" );
+                $( "#log" ).scrollTop( 0 );
+            }
+
+            $("#city").autocomplete({
+                source: function (request, response) {
+
+                    $.ajax({
+                                type:"GET",
+                        url: hostURL + "/admin-services/v1/principals?query=" + request.term + "&size=50",
+                        dataType: "jsonp"
+//                        success: function (data) {
+//                            console.log("starting");
+//                            response(
+//                                    function () {
+////                                        return [ "Choice1", "Choice2" ]
+//                                        return [{ label: "key", value:"carlos"} ]
+//                                    });
+//                        }
+                    })
+                            .done(function (data) {
+                                console.log("starting");
+//                                response(
+//                                        function () {
+////                                        return [ "Choice1", "Choice2" ]
+//                                            return [{ label: "key", value:"carlos"} ]
+//                                        });
+                            }).
+                            error(function(msg){
+                                showMsg(msg);
+                                listSearch(msg.responseText);
+                            })
+                },
+                minLength: 2,
+                select: function (event, ui) {
+                    log(ui.item ?
+                            "Selected: " + ui.item.label :
+                            "Nothing selected, input was " + this.value);
+                },
+                open: function () {
+                    $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+                },
+                close: function () {
+                    $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="ui-widget">
+            <label for="city">Search: </label>
+            <input id="city">
+        </div>
+
+        <div id="tasklist"></div>
+
+        <div class="ui-widget" style="margin-top:2em; font-family:Arial; visibility: hidden">
+            Result:
+            <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
