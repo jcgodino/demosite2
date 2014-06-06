@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Principal search</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="../css/style.css">
@@ -18,7 +18,7 @@
     <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="application/javascript" src="../js/ldapsync.js"/>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="application/javascript" src="../js/globals.js"></script>
 
     <style>
@@ -43,9 +43,9 @@
                     $.ajax({
                                 type:"GET",
                         url: hostURL + "/admin-services/v1/principals?query=" + request.term + "&size=50",
-                        dataType: "jsonp"
+                        dataType: "json"
 //                        success: function (data) {
-//                            console.log("starting");
+//                         console.log("starting");
 //                            response(
 //                                    function () {
 ////                                        return [ "Choice1", "Choice2" ]
@@ -55,11 +55,13 @@
                     })
                             .done(function (data) {
                                 console.log("starting");
-//                                response(
-//                                        function () {
-////                                        return [ "Choice1", "Choice2" ]
-//                                            return [{ label: "key", value:"carlos"} ]
-//                                        });
+
+                               // if (data.data.metadata.returnedRecords)
+                                 //   $.each(data.data.principals, function (index, element) {
+                                   //     $('#tasklist').append('<li><a href="#" id="' + element.displayName + '" class="list-group-item">' +  '</a></li>');
+                                //});
+                                listSearch(data);
+
                             }).
                             error(function(msg){
                                 showMsg(msg);
@@ -83,6 +85,17 @@
     </script>
 </head>
 <body>
+ <div class="modal bs-example-modal-sm" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="my-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="H1">User Details</h4>
+      </div>
+      <div id="modalbody" class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="ui-widget">
@@ -98,7 +111,6 @@
         </div>
     </div>
 </div>
-
 
 </body>
 </html>
