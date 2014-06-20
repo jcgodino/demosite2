@@ -80,10 +80,15 @@ function listgroups() {
     		.done(function (foo) {
 
     		    console.log(foo.data.principals);
+                
     		    $.each(foo.data.principals, function (i, principal) {
     		        url2 = url + principal.key;
     		        $('#grouplist').append('<li><a href="#" id="' + principal.displayName + '" class="list-group-item"><span>Group Name : </span>' + principal.displayName + '</li>');
+    		        $("#list").append('<option value=' + principal.key+ '>' + principal.displayName + '</option>');
+
     		    });
+
+    		    $("#listbox").show();
     		})
 		.error(function (msg) {
 		    console.log("something went wrong");

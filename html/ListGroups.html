@@ -61,7 +61,7 @@
     <div class="panel-body">
      <form>
 
-     <div id="checkboxes">
+    <!-- <div id="checkboxes">
     <input type="checkbox" id="group1" name="guests" value="9c8f80c1-98f0-335e-8ddb-e0320a0b9837"/>
     <label for="icheck1">guests</label>
     <input type="checkbox" id="group2" name="administrators" value="826dc43f-87aa-3e07-984c-18cf158e4ab5"/>
@@ -72,7 +72,8 @@
     <label for="icheck1">Remote Desktop Users</label>
     <input type="checkbox" id="group5" name="domainadmins"value="ae7a01a0-fb77-3456-afb7-b5fea1f4d579"/>
     <label for="icheck1">Domain Admins</label>
-    </div>
+    </div>-->
+    <div id="listbox" style="display: none;"><select id="list" name="list" multiple="multiple" size="25" ></select></div>
     </form>
     <script>
 
@@ -85,7 +86,7 @@
         var domainadmins = "ae7a01a0-fb77-3456-afb7-b5fea1f4d579";
         var groupkeys = "";
 
-        $("input[type=checkbox]").on("click", function () {
+       /* $("input[type=checkbox]").on("click", function () {
             $("#city").prop('disabled', false);
             var n = $("input:checked");
             if (n.length == 0)
@@ -99,6 +100,13 @@
                 else if (groupkeys.length == 0)
                     groupkeys = box.value;
             });
+        });*/
+
+        $("#list").change(function () {
+            $("#city").prop('disabled', false);
+            var multipleValues = $("#list").val() || [];
+            groupkeys = multipleValues.join(",");
+            console.log(groupkeys);
         });
 
         $(function () {
@@ -154,6 +162,8 @@
             });
         });
     </script>
+      <span><p>&nbsp;</span>
+      <span><p>&nbsp;</span>
         <div class="ui-widget">
             <label for="city">Search: </label>
             <input id="city" disabled="disabled">
