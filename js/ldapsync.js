@@ -20,7 +20,7 @@ function showMsg(msg){
 }
 
 function listSearch(data){
-	url = hostURL + "/admin-services/v1/principals/"
+    url = "http://localhost:8082" + "/admin-services/v1/principals/"
 	$('#tasklist').html("");
 	//console.log(data);
 	//principals = jQuery.parseJSON(data);
@@ -36,7 +36,7 @@ function listSearch(data){
 }
 
 function showPrincipal(data){
-	url = "http://localhost:8080/admin-services/v1/principals/" + data;
+	url = "http://localhost:8082/admin-services/v1/principals/" + data;
 
 	$.ajax({
 	    type: "GET",
@@ -64,5 +64,35 @@ function showPrincipal(data){
 		    console.log("something went wrong");
 		    console.log(msg);
 		});
+}
+
+
+function listgroups() {
+    url = "http://localhost:8082/admin-services/v1/principals/groups"
+    $('#grouplist').html("");
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        contentType: "application/json",
+        dataType: 'json'
+    })
+    		.done(function (foo) {
+
+    		    console.log(foo.data.principals);
+    		    $.each(foo.data.principals, function (i, principal) {
+    		        url2 = url + principal.key;
+    		        $('#grouplist').append('<li><a href="#" id="' + principal.displayName + '" class="list-group-item"><span>Group Name : </span>' + principal.displayName + '</li>');
+    		    });
+    		})
+		.error(function (msg) {
+		    console.log("something went wrong");
+		    console.log(msg);
+		})
+
+}
+
+function cleargroups() { 
+    $('#grouplist').html("");
 }
 

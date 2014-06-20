@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Principal search</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" src="../css/custome.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!--<link rel="stylesheet" href="../css/animate.min.css" /> -->
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="../js/ldapsync.js"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="../js/globals.js"></script>
+
+    <style>
+        .ui-autocomplete-loading {
+            background: white url('ui-anim_basic_16x16.gif') right center no-repeat;
+        }
+
+        #city {
+            width: 25em;
+        }
+    </style>
+    <script>
+   
+    </script>
+</head>
+<body>
+ <div class="modal bs-example-modal-sm" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="my-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="H1">User Details</h4>
+      </div>
+      <div id="modalbody" class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<button type="button" class="btn btn-default btn-sm " onclick="listgroups()">
+  <span class="glyphicon glyphicon-list"></span> List All Groups
+</button>
+<button type="button" class="btn btn-default btn-sm " onclick="cleargroups()">
+  <span class="glyphicon glyphicon-zoom-out"></span> Clear
+</button>
+<div class="ui-widget" id="grouplist"></div>
+</div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+     <form>
+
+     <div id="checkboxes">
+    <input type="checkbox" id="group1" name="guests" value="9c8f80c1-98f0-335e-8ddb-e0320a0b9837"/>
+    <label for="icheck1">guests</label>
+    <input type="checkbox" id="group2" name="administrators" value="826dc43f-87aa-3e07-984c-18cf158e4ab5"/>
+    <label for="icheck1">Administrators</label>
+    <input type="checkbox" id="group3" name="backupoperators"value="e7ed6f2b-8380-3a32-a63c-358f1d544082"/>
+    <label for="icheck1">Back Up Operators</label>
+    <input type="checkbox" id="group4" name="remotedesktopussers"value="b9bd3d64-7b47-395b-84e9-050400ce22bd"/>
+    <label for="icheck1">Remote Desktop Users</label>
+    <input type="checkbox" id="group5" name="domainadmins"value="ae7a01a0-fb77-3456-afb7-b5fea1f4d579"/>
+    <label for="icheck1">Domain Admins</label>
+    </div>
+    </form>
+    <script>
+
+
+
+        var adminkey = "9c8f80c1-98f0-335e-8ddb-e0320a0b9837";
+        var guestkey = "826dc43f-87aa-3e07-984c-18cf158e4ab5";
+        var backupoperatorskey = "e7ed6f2b-8380-3a32-a63c-358f1d544082";
+        var remotedesktopussers = "b9bd3d64-7b47-395b-84e9-050400ce22bd";
+        var domainadmins = "ae7a01a0-fb77-3456-afb7-b5fea1f4d579";
+        var groupkeys = "";
+
+        $("input[type=checkbox]").on("click", function () {
+            $("#city").prop('disabled', false);
+            var n = $("input:checked");
+            if (n.length == 0)
+            $("#city").prop('disabled', true);
+            console.log(n);
+            groupkeys = ""
+            $.each(n, function (i, box) {
+
+                if (groupkeys.length > 0)
+                    groupkeys = groupkeys + "," + box.value;
+                else if (groupkeys.length == 0)
+                    groupkeys = box.value;
+            });
+        });
+
+        $(function () {
+            function log(message) {
+                $("<div>").text(message).prependTo("#log");
+                $("#log").scrollTop(0);
+            }
+
+            $("#city").autocomplete({
+                source: function (request, response) {
+
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8082/admin-services/v1/principals/users?query=" + request.term + "&groupkeys=" + groupkeys + "&size=50",
+
+                        dataType: "json"
+                        //                        success: function (data) {
+                        //                         console.log("starting");
+                        //                            response(
+                        //                                    function () {
+                        ////                                        return [ "Choice1", "Choice2" ]
+                        //                                        return [{ label: "key", value:"carlos"} ]
+                        //                                    });
+                        //                        }
+                    })
+                            .done(function (data) {
+                                console.log("starting");
+
+                                // if (data.data.metadata.returnedRecords)
+                                //   $.each(data.data.principals, function (index, element) {
+                                //     $('#tasklist').append('<li><a href="#" id="' + element.displayName + '" class="list-group-item">' +  '</a></li>');
+                                //});
+                                listSearch(data);
+
+                            }).
+                            error(function (msg) {
+                                showMsg(msg);
+                                listSearch(msg.responseText);
+                            })
+                },
+                minLength: 1,
+                select: function (event, ui) {
+                    log(ui.item ?
+                            "Selected: " + ui.item.label :
+                            "Nothing selected, input was " + this.value);
+                },
+                open: function () {
+                    $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+                },
+                close: function () {
+                    $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+                }
+            });
+        });
+    </script>
+        <div class="ui-widget">
+            <label for="city">Search: </label>
+            <input id="city" disabled="disabled">
+        </div>
+        <div id="tasklist"></div>
+
+        <div class="ui-widget" style="margin-top:2em; font-family:Arial; visibility: hidden">
+            Result:
+            <div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
