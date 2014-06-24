@@ -70,6 +70,7 @@ function showPrincipal(data){
 function listgroups() {
     url = "http://localhost:8082/admin-services/v1/principals/groups"
     $('#grouplist').html("");
+    $('#list').empty();
 
     $.ajax({
         type: "GET",

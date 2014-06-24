@@ -74,6 +74,7 @@
     <label for="icheck1">Domain Admins</label>
     </div>-->
     <div id="listbox" style="display: none;"><select id="list" name="list" multiple="multiple" size="25" ></select></div>
+    <div id="selectedgroups" style="display: none;"></div>
     </form>
     <script>
 
@@ -107,6 +108,15 @@
             var multipleValues = $("#list").val() || [];
             groupkeys = multipleValues.join(",");
             console.log(groupkeys);
+            var selectedgroups = $('#list option:selected') || [];
+            var string = "";
+            selectedgroups.each(function () {
+              if (string.length>0)
+                  string = string + ", " + $(this).text();
+                else
+                    string = $(this).text();
+            });
+            $("#selectedgroups").html("Selected Groups : " + string).show();
         });
 
         $(function () {
